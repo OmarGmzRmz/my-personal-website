@@ -1,0 +1,38 @@
+<section class="about-jumbotron">
+    <div class="jumbotron-container">
+      <div class="jumbotron-overlay">
+        <div class="elements-container">
+          <h1>Projects</h1>
+          <div class="year-columns-container" *ngIf="years.length !== 0; else loadingSpinner">
+            <div
+              class="year-column"
+              *ngFor="let year of years"
+            >
+              <div
+                class="project-container"
+                *ngFor="let project of year.projects"
+              >
+                <div
+                  class="project-img"
+                  matTooltip="{{project.name}}"
+                  [matTooltipPosition]="'right'"
+                  [ngStyle]="{'background-image': 'url(' + project.image + ')'}"
+                  [routerLink]="['./', project.id]"
+                >
+                </div>
+                <div class="project-code">
+                  {{project.code}}
+                </div>
+              </div>
+              <div class="year">{{year.year}}</div>
+            </div>
+          </div>
+          <ng-template #loadingSpinner>
+            <div class="loading-spinner-container">
+              <mat-spinner></mat-spinner>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </section>

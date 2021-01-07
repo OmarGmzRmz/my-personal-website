@@ -1,0 +1,181 @@
+<section class="about-jumbotron">
+  <div class="jumbotron-container">
+    <div class="jumbotron-overlay">
+      <div class="elements-container">
+        <h1>Experience</h1>
+        <h5>Make the change that you want to see in the world</h5>
+        <button>Call action</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<mat-tab-group class="tab-group">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">sticky_note_2</mat-icon>
+      <div class="label">Curriculum Vitae</div>
+    </ng-template>
+    <div class="tab tab-resume">
+      <div class="resume-container">
+        <div id="document" class="document">
+          <div class="resume-left" [ngClass]='isPurple ? "left-purple" : isBlue ? "left-blue" : "left-gray"' [style.color]="leftPanelFontColor">
+            <div class="title">Mechatronic Engineer</div>
+            <div class="section-title">Details</div>
+            <div>Mexico</div>
+            <div>+52 452 525 52 86</div>
+            <div>gomar8138@gmail.com</div>
+            <div class="subtitle">Nationality</div>
+            <div>Mexican</div>
+            <div class="subtitle">Date of birth</div>
+            <div> 01-19-1999</div>
+            <div class="section-title">Links</div>
+            <div class="link-container">
+              <div class="icon">Github icon</div>
+              <div class="link">https://github.com/in/OmarGmzRmz</div>
+            </div>
+            <div class="section-title">Languages</div>
+            <div>Spanish</div>
+            <div class="spanish-bar"></div>
+            <div>English</div>
+            <div class="english-bar"></div>
+          </div>
+          <div class="right">
+            <div class="name">{{ name }}</div>
+            <div class="date">{{ date }}</div>
+            <div class="profile-label">Profile</div>
+            <div class="profile">
+              Young student of the mechatronics career and programming student for web development.
+            </div>
+
+            <div *ngFor="let section of sections; let i = index">
+              <div class="section-title"> {{section.title}}</div>
+              <div *ngFor="let place of section.places">
+                <div class="place">
+                  <div class="left">
+                    <div class="position">{{place.position}}</div>
+                    <div class="period">{{place.startDate | date : 'shortDate'}} - {{place.endDate | date : 'shortDate'}}</div>
+                  </div>
+                  <div class="right">{{place.place}}</div>
+                </div>
+                <ul class="points-list">
+                  <li class="point" *ngFor="let point of place.points">
+                    {{point}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="controls-container">
+          <div class="select-color-container">
+            <div class="select-color-label">
+              Change color
+            </div>
+            <div class="color-container">
+              <div tabindex="0" class="control purple focus-outline" (click)="isPurple = true; isBlue = false; leftPanelFontColor = 'white';"></div>
+              <div tabindex="0" class="control blue focus-outline" (click)="changeLeftPanelStyle('blue')"></div>
+              <div tabindex="0" class="control gray focus-outline" (click)="changeLeftPanelStyle('gray')"></div>
+            </div>
+          </div>
+          <button mat-raised-button color="primary" (click)="downloadResume()">Download</button>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">history_edu</mat-icon>
+      <div class="label">Resume</div>
+    </ng-template>
+    <div class="tab tab-resume">
+      <div class="resume-container">
+        <div id="document" class="document">
+          <div class="resume-left" [ngClass]='isPurple ? "left-purple" : isBlue ? "left-blue" : "left-gray"' [style.color]="leftPanelFontColor">
+            <div class="title">Mechatronic Engineer</div>
+            <div class="section-title">Details</div>
+            <div>Mexico</div>
+            <div>+52 452 525 52 86</div>
+            <div>gomar8138@gmail.com</div>
+            <div class="subtitle">Nationality</div>
+            <div>Mexican</div>
+            <div class="subtitle">Date of birth</div>
+            <div> 01-19-1999</div>
+            <div class="section-title">Links</div>
+            <div class="link-container">
+              <div class="icon">Github icon</div>
+              <div class="link">https://github.com/in/OmarGmzRmz</div>
+            </div>
+            <div class="section-title">Languages</div>
+            <div>Spanish</div>
+            <div class="spanish-bar"></div>
+            <div>English</div>
+            <div class="english-bar"></div>
+          </div>
+          <div class="right">
+            <div class="name">{{ name }}</div>
+            <div class="date">{{ date }}</div>
+            <div class="profile-label">Profile</div>
+            <div class="profile">
+              Young student of the mechatronics career and programming student for web development.
+            </div>
+
+            <div *ngFor="let section of sections; let i = index">
+              <div class="section-title"> {{section.title}}</div>
+              <div *ngFor="let place of section.places">
+                <div class="place">
+                  <div class="left">
+                    <div class="position">{{place.position}}</div>
+                    <div class="period">{{place.startDate | date : 'shortDate'}} - {{place.endDate | date : 'shortDate'}}</div>
+                  </div>
+                  <div class="right">{{place.place}}</div>
+                </div>
+                <ul class="points-list">
+                  <li class="point" *ngFor="let point of place.points">
+                    {{point}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="controls-container">
+          <div class="select-color-container">
+            <div class="select-color-label">
+              Change color
+            </div>
+            <div class="color-container">
+              <div tabindex="0" class="control purple focus-outline" (click)="isPurple = true; isBlue = false; leftPanelFontColor = 'white';"></div>
+              <div tabindex="0" class="control blue focus-outline" (click)="changeLeftPanelStyle('blue')"></div>
+              <div tabindex="0" class="control gray focus-outline" (click)="changeLeftPanelStyle('gray')"></div>
+            </div>
+          </div>
+          <button mat-raised-button color="primary" (click)="downloadResume()">Download</button>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">spellcheck</mat-icon>
+      <div class="label">Other Activities</div>
+    </ng-template>
+    Content 3
+  </mat-tab>
+</mat-tab-group>
+
+<button (click)="showDynamicDisplayContent = !showDynamicDisplayContent">Toggle div visibility</button>
+<div *ngIf="showDynamicDisplayContent; else myIdentifier" style="color: red;">Condition true dynamic content</div>
+<ng-template #myIdentifier>
+  <div style="color: blue;">Else dynamic content</div>
+</ng-template>
+
+
+<div class="tabs-navigation-container">
+  <a class="tab-selector" routerLink="active" [routerLink]="['./cv']">Curriculum Vitae</a>
+  <a class="tab-selector" routerLink="active" [routerLink]="['./resume']">Resume</a>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,15 @@
+<mat-toolbar class="footer">
+    <mat-toolbar-row class="row-1">
+      <app-presentation-card
+      [name]="nameFooter"
+      [title]="titleFooter"
+      [emailAddress]="emailAddressFooter"
+      [phoneNumber]="phoneNumberFooter"
+      [physicalAddress]="physicalAddressFooter"
+      (showInfo)="onShowInfo($event)"
+      ></app-presentation-card>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="row-2">
+        <div class="powered-by">{{ text }}</div>
+    </mat-toolbar-row>
+</mat-toolbar>
