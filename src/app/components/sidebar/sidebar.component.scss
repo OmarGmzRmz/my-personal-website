@@ -1,28 +1,69 @@
+// Custom component theming
 .sidenav-container {
-    .navigation-container {
+  .navigation-container {
+    display: flex;
+    flex-direction: column;
+  a {
+      position: relative;
+      padding: 10px 20px;
+      cursor: pointer;
+      text-decoration: none;
+      &:visited {
+        color: inherit;
+      }
+      &.active {
+        &:before {
+          content: '';
+          position: absolute;
+          height: 100%;;
+          width: 4px;
+          right: 0px;
+          top: 0px;
+        }
+      }
+    }
+  }
+  ::ng-deep {
+    .theming-container {
+      margin-top: 20px;
+      .label {
+        padding: 0px 20px;
+      }
+      .theme-radio-group {
         display: flex;
         flex-direction: column;
-        a {
-            position: relative;
-            padding: 10px 20px;
-            cursor: pointer;
-            text-decoration: none;
-            &:visited {
-              color: inherit;
-            }
-            &.active {
-                background-color: gainsboro;
-              &:before {
-                content: '';
-                position: absolute;
-                height: 100%;
-                background-color: #3f51b5;
-                width: 2px;
-                right: 0px;
-                top: 0px;
-              }
-            }
+        padding: 10px 20px;
+        ::ng-deep {
+          .mat-radio-button {
           }
+        }
+      }
     }
+  }
 }
 
+// Custom component theming
+@import '~@angular/material/theming';
+
+@mixin sidebar-theme($light-theme) {
+  $primary: map-get($light-theme, primary);
+  $accent: map-get($light-theme, accent);
+  .sidenav-container {
+    a {
+      border-bottom: 1px solid mat-color($accent);
+      &.active {
+        &:before {
+          background-color: mat-color($accent);
+        }
+      }
+    }
+  }
+}
+
+// Custom component override theming
+/* ::ng-deep .light-theme .sidenav-container .navigation-container a {
+  background-color: red;
+}
+::ng-deep .dark-theme .sidenav-container .navigation-container a {
+  background-color: blue;
+} */

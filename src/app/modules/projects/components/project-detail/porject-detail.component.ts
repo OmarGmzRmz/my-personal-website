@@ -21,7 +21,7 @@ export class PorjectDetailComponent implements OnInit, OnDestroy {
         this.project = projectDetailInfo.project;
         console.log(this.project);
       } else {
-        alert('Project not fuond');
+        alert('Project not found');
       }
     });
   }

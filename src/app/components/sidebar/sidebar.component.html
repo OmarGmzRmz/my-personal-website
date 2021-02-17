@@ -1,7 +1,6 @@
 <div class="sidenav-container">
     <mat-toolbar  color="primary">
         <span>{{initials}}</span>
-        <span class="spacer"></span>
       </mat-toolbar>
       <div class="navigation-container">
         <a routerLink="/home" routerLinkActive="active" (click)="sideBarNavigation.emit()">Home</a>
@@ -10,4 +9,11 @@
         <a routerLink="/projects" routerLinkActive="active" (click)="sideBarNavigation.emit()">Projects</a>
         <a routerLink="/hobbies" routerLinkActive="active" (click)="sideBarNavigation.emit()">Hobbies</a>
       </div>
+      <div class="theming-container">
+        <div class="label">Theme</div>
+        <mat-radio-group class="theme-radio-group" aria-label="Select an option" [formControl]="themeControl">
+          <mat-radio-button [color]="'accent'" value="light-theme">Light</mat-radio-button>
+          <mat-radio-button [color]="'primary'" value="dark-theme">Dark</mat-radio-button>
+        </mat-radio-group>
+  </div>
 </div>

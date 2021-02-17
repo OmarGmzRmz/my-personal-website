@@ -1,36 +1,73 @@
+<!-- #region Desktop header -->
 <mat-toolbar class="header"color="primary">
   <div class="header-container">
-    <span>{{name}}</span>
+    <span (click)="navigateToHomePage()">{{name}}</span>
     <span class="spacer"></span>
     <div class="navigation-container">
-      <a routerLink="/home" routerLinkActive="active">Home</a>
-      <a routerLink="/about" routerLinkActive="active">About</a>
-      <a routerLink="/cv" routerLinkActive="active">CV</a>
-      <a routerLink="/projects" routerLinkActive="active">Projects</a>
-      <a routerLink="/hobbies" routerLinkActive="active">Hobbies</a>
+      <div routerLink="/home" routerLinkActive="active">Home</div>
+      <div routerLink="/about" routerLinkActive="active">About</div>
+      <div routerLink="/cv" routerLinkActive="active">CV</div>
+      <div routerLink="/projects" routerLinkActive="active">Projects</div>
+      <div routerLink="/hobbies" routerLinkActive="active">Hobbies</div>
     </div>
     <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
       <mat-icon>share</mat-icon>
     </button>
+    <button mat-icon-button  [matMenuTriggerFor]="settingsMenu" aria-label="setting icon button">
+      <mat-icon>settings</mat-icon>
+    </button>
   </div>
 </mat-toolbar>
 
+<mat-toolbar class="sticky-header" [ngClass]="{'sticky': isSticky}" color="primary">
+  <div class="header-container">
+    <span (click)="navigateToHomePage()">{{name}}</span>
+    <span class="spacer"></span>
+    <div class="navigation-container">
+      <div routerLink="/home" routerLinkActive="active">Home</div>
+      <div routerLink="/about" routerLinkActive="active">About</div>
+      <div routerLink="/cv" routerLinkActive="active">CV</div>
+      <div routerLink="/projects" routerLinkActive="active">Projects</div>
+      <div routerLink="/hobbies" routerLinkActive="active">Hobbies</div>
+    </div>
+    <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
+      <mat-icon>share</mat-icon>
+    </button>
+    <button mat-icon-button  [matMenuTriggerFor]="settingsMenu" aria-label="setting icon button">
+      <mat-icon>settings</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<!-- #endregion -->
+
+<!-- #region Mobile header -->
 <mat-toolbar class="header-mobile" color="primary">
   <button mat-icon-button (click)="toggleSidenav.emit()" aria-label="menu icon-button">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>{{initials}}</span>
+  <span (click)="navigateToHomePage()">{{initials}}</span>
   <span class="spacer"></span>
   <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
+<!-- #endregion -->
+
+<app-loadingbar></app-loadingbar>
 
 <mat-menu #shareMenu="matMenu">
   <button mat-menu-item>Copy link</button>
   <button mat-menu-item>Share on Facebook</button>
   <button mat-menu-item>Share on Tinder</button>
 </mat-menu>
+<mat-menu class="settings-menu" #settingsMenu="matMenu">
+  <div class="label">Theme</div>
+  <mat-radio-group class="theme-radio-group" aria-label="Select an option" [formControl]="themeControl">
+    <mat-radio-button [color]="'accent'" value="light-theme">Light</mat-radio-button>
+    <mat-radio-button [color]="'primary'" value="dark-theme">Dark</mat-radio-button>
+  </mat-radio-group>
+</mat-menu>
+
 
 
 <!-- <div style="border: 1px solid red; width: 50px; height: 50px; border-radius: 5px; margin: 5px;"></div> -->

@@ -1,53 +1,153 @@
-.spacer {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-  }
-  
-  .header {
-    z-index: 10;
-    position: relative;
-    overflow-x: hidden;
-    .header-container {
+@import '~@angular/material/theming';
+
+@mixin header-theme($light-theme) {
+  $primary: map-get($light-theme, primary);
+  $accent: map-get($light-theme, accent);
+  $track-color: mat-color($primary);
+  $thumb-color: mat-color($accent);
+  .spacer {
       display: flex;
-      max-width: 1280px;
-      margin: auto;
-      width: 100%;
+      flex-grow: 1;
+      justify-content: center;
     }
-    .navigation-container {
-      display: flex;
-      a {
-        position: relative;
-        color: white;
-        cursor: pointer;
-        margin-right: 10px;
-        text-decoration: none;
-        &:visited {
-          color: inherit;
-        }
-        &.active {
-          &:before {
-            content: '';
-            position: absolute;
-            height: 2px;
-            background-color: white;
-            width: 100%;
-            bottom: 0px;
+    .header {
+      z-index: 10;
+      position: relative;
+      overflow-x: hidden;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+      .header-container {
+        display: flex;
+        max-width: 1280px;
+        margin: auto;
+        width: 100%;
+        span {
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
           }
         }
       }
+      .navigation-container {
+        display: flex;
+        div {
+          position: relative;
+          outline: none;
+          cursor: pointer;
+          margin-right: 10px;
+          text-decoration: none;
+          outline: none;
+          &:hover {
+            color:mat-color($accent);
+          }
+          &:visited {
+            color: inherit;
+          }
+          &.active {
+            &:before {
+              content: '';
+              position: absolute;
+              height: 2px;
+              background-color: white;
+              width: 100%;
+              bottom: 0px;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
     }
-    @media screen and (max-width: 768px) {
+
+    .sticky-header {
+      z-index: 10;
+      position: fixed;
+      overflow-x: hidden;
+      top: 0px;
+      height: 0px;
+      opacity: 0;
+      transition: opacity 0.25s ease-out, height 0.15s ease;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+      .header-container {
+        display: flex;
+        max-width: 1280px;
+        margin: auto;
+        width: 100%;
+        span {
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .navigation-container {
+        display: flex;
+        div {
+          position: relative;
+          outline: none;
+          cursor: pointer;
+          margin-right: 10px;
+          text-decoration: none;
+          outline: none;
+          &:hover {
+            color:mat-color($accent);
+          }
+          &:visited {
+            color: inherit;
+          }
+          &.active {
+            &:before {
+              content: '';
+              position: absolute;
+              height: 2px;
+              background-color: white;
+              width: 100%;
+              bottom: 0px;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+    
+    .header-mobile {
+      z-index: 10;
+      position: relative;
+      overflow-x: hidden;
       display: none;
+      span {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        display: flex;
+      }
+    }
+
+    .sticky {
+      height: 64px;
+      opacity: 1;
+      transition: opacity 0.65s ease-out, height 0.25s ease;
     }
   }
   
-  .header-mobile {
-    z-index: 10;
-    position: relative;
-    overflow-x: hidden;
-    display: none;
-    @media screen and (max-width: 768px) {
+  ::ng-deep {
+  .settings-menu {
+    .label {
+      padding: 0px 10px;
+    }
+    .theme-radio-group {
       display: flex;
+      flex-direction: column;
+      padding: 10px;
+      ::ng-deep {
+        .mat-radio-button {
+        }
+      }
     }
   }
+}

@@ -19,6 +19,13 @@ import { PresentationCardComponent } from './components/presentation-card/presen
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SwiperModule, SwiperConfigInterface, SWIPER_CONFIG} from 'ngx-swiper-wrapper';
+import { ThemeService } from './shared/services/theme.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatDialogModule} from '@angular/material/dialog';
+import { SharedModule } from './shared/shared.module';
+import { NgParticlesModule } from 'ng-particles';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -40,18 +47,26 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatRadioModule, 
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
     MatSidenavModule,
-    SwiperModule
+    SwiperModule,
+    FontAwesomeModule,
+    MatDialogModule,
+    SharedModule,
+    NgParticlesModule
   ],
   providers: [{
     provide: SWIPER_CONFIG,
     useValue: DEFAULT_SWIPER_CONFIG
-  }
+  },
+  ThemeService
 ],
   bootstrap: [AppComponent]
 })

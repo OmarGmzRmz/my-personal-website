@@ -3,12 +3,12 @@ import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main',
-  templateUrl: './main.component.html',
+   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
   opened: boolean | undefined;
-  initials = 'OEGR';
+  initials = 'O E G R';
 
   constructor(@Inject(DOCUMENT) private document: any) { }
 

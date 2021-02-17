@@ -1,61 +1,69 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
-// Plus imports for other components in your app.
+// Theming
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat-core();
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import './themes/light';
+@import './themes/dark';
+@import './component-themes';
 
-// Define a custom typography config that overrides the font-family as well as the
-// `headlines` and `body-1` levels.
-$custom-typography: mat-typography-config(
-  $font-family: 'Major Mono Display, Segoe UI, Roboto, monospace',
-  /* $headline: mat-typography-level(32px, 48px, 700),
-  $body-1: mat-typography-level(16px, 24px, 500) */
-);
+// Default 
 
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($light-theme-typography);
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($light-theme-typography);
 // Override typography for all Angular Material, including mat-base-typography and all components.
-@include angular-material-typography($custom-typography);
-// More about typography customization
-// https://material.angular.io/guide/typography
+@include angular-material-typography($light-theme-typography);
+// Use Angular Material themes
+@include mat-core($light-theme-typography);
+// Include Light theme
+@include angular-material-theme($light-theme);
+@include component-themes($light-theme);
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$personal-website-primary: mat-palette($mat-indigo);
-$personal-website-accent: mat-palette($mat-pink, A200, A100, A400);
+// Light theme
+.light-theme {
+  // Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+  @include mat-base-typography($light-theme-typography);
+  // Override typography for a specific Angular Material components.
+  @include mat-checkbox-typography($light-theme-typography);
+  // Override typography for all Angular Material, including mat-base-typography and all components.
+  @include angular-material-typography($light-theme-typography);
+  // Use Angular Material themes
+  @include mat-core($light-theme-typography);
+  // Include Light theme
+  @include angular-material-theme($light-theme);
+  @include component-themes($light-theme);
+}
 
-// The warn palette is optional (defaults to red).
-$personal-website-warn: mat-palette($mat-red);
+// Dark theme
+.dark-theme {
+  // Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+  @include mat-base-typography($dark-theme-typography);
+  // Override typography for a specific Angular Material components.
+  @include mat-checkbox-typography($dark-theme-typography);
+  // Override typography for all Angular Material, including mat-base-typography and all components.
+  @include angular-material-typography($dark-theme-typography);
+  // Use Angular Material themes
+  @include mat-core($dark-theme-typography);
+  // Include Dark theme
+  @include angular-material-theme($dark-theme);
+  @include component-themes($dark-theme);
+}
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$personal-website-theme: mat-light-theme((
-  color: (
-    primary: $personal-website-primary,
-    accent: $personal-website-accent,
-    warn: $personal-website-warn,
-    )
-));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($personal-website-theme);
+// custom variables
 
 @import './variables';
 
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: "Open Sans Condensed" ,Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif !important;
+}
 
 .no-scroll {
   overflow-y: hidden;
 }
+
 // $focus-outline-color: #46DDA9;
 $focus-outline-color: black;
 $focus-outline-thickeness: 2px;
@@ -67,4 +75,36 @@ $focus-outline-thickeness: 2px;
       outline: none;
     }
   }
+}
+
+
+
+// * Change scrollbars styles
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f5f5f5;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  // border: 2px solid #555555;
+}
+
+// Change Angular Material styles
+
+.mat-dialog-container::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f5f5f5;
+}
+.mat-dialog-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+.mat-dialog-container::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  // border: 2px solid #555555;
 }
