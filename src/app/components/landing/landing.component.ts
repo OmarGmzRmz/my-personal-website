@@ -100,9 +100,9 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
     const options0: TypedOptions = {
       strings: [
-        'Al Barcelona de Messi le dieron una verguiza'
+        'Welcome to my personal website'
       ],
-      typeSpeed: 30,
+      typeSpeed: 50,
       backDelay: 750,
       showCursor: true,
       cursorChar: '_',
@@ -122,10 +122,12 @@ export class LandingComponent implements OnInit {
       setTimeout(() => {
         const options2: TypedOptions = {
           strings: [
-            'Pero no hay pedo, yo le voy al Liverpool :p'
+            'Mechatronic Engineer',
+            'Omar Eliseo Gómez Ramírez'
           ],
-          typeSpeed: 30,
+          typeSpeed: 50,
           backDelay: 750,
+          backSpeed: 150,
           showCursor: true,
           cursorChar: '_',
           loop: false,
