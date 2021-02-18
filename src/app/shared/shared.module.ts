@@ -10,11 +10,13 @@ import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.c
 import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { PrivacyDialogComponent } from './components/privacy-dialog/privacy-dialog.component';
+import { TermsDialogComponent } from './components/terms-dialog/terms-dialog.component';
 
 
 
 @NgModule({
-  declarations: [CookiesPolicyDialogComponent, LoadingbarComponent, ScrollToTopComponent],
+  declarations: [CookiesPolicyDialogComponent, LoadingbarComponent, ScrollToTopComponent, PrivacyDialogComponent, TermsDialogComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -24,11 +26,13 @@ import { BrowserModule } from '@angular/platform-browser';
     MatTooltipModule
   ],
   entryComponents: [
-    CookiesPolicyDialogComponent
+    CookiesPolicyDialogComponent,
+    PrivacyDialogComponent
   ], 
   exports: [
     LoadingbarComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    TermsDialogComponent
   ],
   providers: [
     ThemeService,
