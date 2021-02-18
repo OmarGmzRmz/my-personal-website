@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-import Typed from 'typed.js';
+import Typed, { TypedOptions } from 'typed.js';
 
 @Component({
   selector: 'app-landing',
@@ -22,137 +22,117 @@ export class LandingComponent implements OnInit {
 
   // Typed
   typed: any;
+  showElement1 = false;
+  showElement2 = false;
+  showElement3 = false;
 
-
-  /* #region  Particles */
+/* #region  Particles */
   id = 'tsparticles';
   particlesOptions = {
-    "particles": {
-      "number": {
-        "value": 80,
-        "density": {
+    "interactivity": {
+      "events": {
+        "onHover": {
           "enable": true,
-          "value_area": 800
+          "mode": "repulse"
         }
       },
+      "modes": {
+        "bubble": {
+          "distance": 400,
+          "duration": 2,
+          "opacity": 0.8,
+          "size": 30
+        },
+        "grab": {
+          "distance": 400
+        }
+      }
+    },
+    "particles": {
       "color": {
         "value": "#ffffff"
       },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#000000"
+      "move": {
+        "attract": {
+          "rotate": {
+            "x": 600,
+            "y": 1200
+          }
         },
-        "polygon": {
-          "nb_sides": 5
-        },
-        "image": {
-          "src": "img/github.svg",
-          "width": 100,
-          "height": 100
-        }
+        "enable": true
+      },
+      "number": {
+        "value": 80
       },
       "opacity": {
+        "random": true,
         "value": 0.5,
-        "random": false,
-        "anim": {
-          "enable": false,
-          "speed": 1,
-          "opacity_min": 0.1,
-          "sync": false
+        "animation": {
+          "enable": true,
+          "minimumValue": 0.1,
+          "speed": 3
         }
       },
       "size": {
-        "value": 10,
         "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 80,
-          "size_min": 0.1,
-          "sync": false
+        "value": 10,
+        "animation": {
+          "minimumValue": 0.1,
+          "speed": 20
         }
       },
-      "line_linked": {
-        "enable": true,
-        "distance": 300,
-        "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 2
-      },
-      "move": {
-        "enable": true,
-        "speed": 12,
-        "direction": "none",
-        "random": false,
-        "straight": false,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
-        }
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": false,
-          "mode": "repulse"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "push"
-        },
-        "resize": true
-      },
-      "modes": {
-        "grab": {
-          "distance": 800,
-          "line_linked": {
-            "opacity": 1
+      "stroke": {
+        "color": {
+          "value": "#000000",
+          "animation": {
+            "enable": false,
+            "speed": 1,
+            "sync": true
           }
-        },
-        "bubble": {
-          "distance": 800,
-          "size": 80,
-          "duration": 2,
-          "opacity": 0.8,
-          "speed": 3
-        },
-        "repulse": {
-          "distance": 400,
-          "duration": 0.4
-        },
-        "push": {
-          "particles_nb": 4
-        },
-        "remove": {
-          "particles_nb": 2
         }
       }
-    },
-    "retina_detect": true
+    }
   }
-  /* #endregion */
+/* #endregion */
 
   constructor() { }
 
   ngOnInit(): void {
-    const options = {
+    const options0: TypedOptions = {
       strings: [
-        'Al Barcelona de Messi le dieron una verguiza :(((', 'Pero no hay pedo, yo le voy al Liverpool :p'
+        'Al Barcelona de Messi le dieron una verguiza'
       ],
-      typeSpeed: 100,
-      backSpeed: 50,
+      typeSpeed: 30,
+      backDelay: 750,
       showCursor: true,
-      cursorChar: '|',
-      loop: false
+      cursorChar: '_',
+      loop: false,
+      loopCount: 0,
+      onComplete: function(self) { (<any>self).cursor.remove() }
     };
     if (!!this.typed) this.typed.destroy();
-    this.typed = new Typed('.typed-element', options);
-  }
+    this.typed = new Typed('.typed-element-0', options0);
 
+    setTimeout(() => {
+      this.showElement1 = true;
+    }, 3000);
+  
+    setTimeout(() => {
+      this.showElement2 = true;
+      setTimeout(() => {
+        const options2: TypedOptions = {
+          strings: [
+            'Pero no hay pedo, yo le voy al Liverpool :p'
+          ],
+          typeSpeed: 30,
+          backDelay: 750,
+          showCursor: true,
+          cursorChar: '_',
+          loop: false,
+          loopCount: 0
+          };
+        this.typed = new Typed('.typed-element-2', options2);
+      }, 1);
+    }, 4000);
+  }
 }
