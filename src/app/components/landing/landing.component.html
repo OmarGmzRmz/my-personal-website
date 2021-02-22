@@ -64,4 +64,14 @@
 
 <section>
   <span class="typed-element"></span>
+  <!-- practice -->
+  <input #myInput1 type="number" >
+  <input #myInput2 type="number" >
+  <button (click)="onButtonClick()">Click me</button>
+
+  <app-cool-border [title]="'Landing'" [subtitle]="'Used on Landing'" [description]="'Using shared component whose host is declared in app module '">
+    <div>
+      This is some random content
+    </div>
+  </app-cool-border>
 </section>

@@ -12,11 +12,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { PrivacyDialogComponent } from './components/privacy-dialog/privacy-dialog.component';
 import { TermsDialogComponent } from './components/terms-dialog/terms-dialog.component';
+import { CoolBorderComponent } from './components/cool-border/cool-border.component';
 
 
 
 @NgModule({
-  declarations: [CookiesPolicyDialogComponent, LoadingbarComponent, ScrollToTopComponent, PrivacyDialogComponent, TermsDialogComponent],
+  declarations: [CookiesPolicyDialogComponent, LoadingbarComponent, ScrollToTopComponent, PrivacyDialogComponent, TermsDialogComponent, CoolBorderComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -32,7 +33,9 @@ import { TermsDialogComponent } from './components/terms-dialog/terms-dialog.com
   exports: [
     LoadingbarComponent,
     ScrollToTopComponent,
-    TermsDialogComponent
+    TermsDialogComponent,
+    //practice
+    CoolBorderComponent
   ],
   providers: [
     ThemeService,

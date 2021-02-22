@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import Typed, { TypedOptions } from 'typed.js';
 
@@ -95,6 +95,10 @@ export class LandingComponent implements OnInit {
   }
 /* #endregion */
 
+//  Practice
+@ViewChild('myInput1', {static: true}) myNumericInput1: ElementRef | undefined;
+@ViewChild('myInput2', {static: true}) myNumericInput2: ElementRef | undefined;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -136,5 +140,11 @@ export class LandingComponent implements OnInit {
         this.typed = new Typed('.typed-element-2', options2);
       }, 1);
     }, 4000);
+  }
+  //Practice
+  onButtonClick() {
+    const a = this.myNumericInput1?.nativeElement.valueAsNumber;
+    const b = this.myNumericInput2?.nativeElement.valueAsNumber;
+    alert(a + b);
   }
 }
