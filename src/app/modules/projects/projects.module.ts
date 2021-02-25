@@ -8,6 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ProjectsService } from './services/projects.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ProjectDetailResolverService } from './services/project-detail.resolver.service';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ProjectDetailResolverService } from './services/project-detail.resolver
     CommonModule,
     ProjectsRoutingModule,
     MatTooltipModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    SharedModule
   ],
   providers: [
     ProjectsService, 

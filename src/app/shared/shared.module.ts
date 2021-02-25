@@ -3,13 +3,9 @@ import { CommonModule } from '@angular/common';
 import { CookiesPolicyDialogComponent } from './components/cookies-policy-dialog/cookies-policy-dialog.component';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { LoadingbarComponent } from './components/loadingbar/loadingbar.component';
 import { ThemeService } from './services/theme.service';
-import { LoaderService } from './services/loader.service';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
-import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { PrivacyDialogComponent } from './components/privacy-dialog/privacy-dialog.component';
 import { TermsDialogComponent } from './components/terms-dialog/terms-dialog.component';
 import { CoolBorderComponent } from './components/cool-border/cool-border.component';
@@ -17,10 +13,8 @@ import { CoolBorderComponent } from './components/cool-border/cool-border.compon
 
 
 @NgModule({
-  declarations: [CookiesPolicyDialogComponent, LoadingbarComponent, ScrollToTopComponent, PrivacyDialogComponent, TermsDialogComponent, CoolBorderComponent],
+  declarations: [CookiesPolicyDialogComponent , ScrollToTopComponent, PrivacyDialogComponent, TermsDialogComponent, CoolBorderComponent],
   imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
     CommonModule,
     MatButtonModule,
     MatIconModule,
@@ -31,15 +25,13 @@ import { CoolBorderComponent } from './components/cool-border/cool-border.compon
     PrivacyDialogComponent
   ], 
   exports: [
-    LoadingbarComponent,
     ScrollToTopComponent,
     TermsDialogComponent,
     //practice
     CoolBorderComponent
   ],
   providers: [
-    ThemeService,
-    LoaderService
+    ThemeService
   ]
 })
 export class SharedModule { }

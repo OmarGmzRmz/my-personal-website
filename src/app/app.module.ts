@@ -19,13 +19,17 @@ import { PresentationCardComponent } from './components/presentation-card/presen
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SwiperModule, SwiperConfigInterface, SWIPER_CONFIG} from 'ngx-swiper-wrapper';
-import { ThemeService } from './shared/services/theme.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SharedModule } from './shared/shared.module';
 import { NgParticlesModule } from 'ng-particles';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { LoadingbarComponent } from './components/loadingbar/loadingbar.component';
+import { LoaderService } from './services/loader.service';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -41,7 +45,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     LandingComponent,
     NotFoundComponent,
     PresentationCardComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoadingbarComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +58,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatMenuModule,
     MatCardModule,
     MatSidenavModule,
@@ -60,13 +67,14 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FontAwesomeModule,
     MatDialogModule,
     SharedModule,
-    NgParticlesModule
+    NgParticlesModule, 
+    MatButtonToggleModule
   ],
   providers: [{
     provide: SWIPER_CONFIG,
     useValue: DEFAULT_SWIPER_CONFIG
   },
-  ThemeService
+  LoaderService
 ],
   bootstrap: [AppComponent]
 })

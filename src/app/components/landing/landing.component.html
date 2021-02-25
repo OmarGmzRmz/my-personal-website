@@ -65,7 +65,7 @@
 <section>
   <span class="typed-element"></span>
   <!-- practice -->
-  <input #myInput1 type="number" >
+  <input #myInput1 type="number" (blur)="onInputBlur($event)">
   <input #myInput2 type="number" >
   <button (click)="onButtonClick()">Click me</button>
 
@@ -74,4 +74,52 @@
       This is some random content
     </div>
   </app-cool-border>
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="section-title" >Contact</div>
+    <form [formGroup]="contactForm" (ngSubmit)="submitContactForm()">
+      <mat-button-toggle-group name="fontStyle" aria-label="Contact chanel" formControlName="toggleControl" required>
+        <mat-button-toggle value="whatsapp">WhatsApp</mat-button-toggle>
+        <mat-button-toggle value="email">Email</mat-button-toggle>
+      </mat-button-toggle-group>
+      <mat-form-field appearence="outline" [color]="'accent'">
+        <mat-label>Full Name</mat-label>
+        <input
+          matInput
+          placeholder="Ex. John Doe"
+          formControlName="nameControl"
+          required
+        />
+        <mat-error *ngIf="contactForm.controls.nameControl.errors && contactForm.controls.nameControl.errors['required']">Full name is required.</mat-error>
+      </mat-form-field>
+    </form>
+    <form [formGroup]="contactForm">
+      <mat-form-field appearence="outline" [color]="'accent'" *ngIf="isSendEmail">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Ex. john.doe@example.com"
+          formControlName="nameControl"
+          required
+        />
+        <mat-error *ngIf="contactForm.controls.emailControl.errors && contactForm.controls.emailControl.errors['noMatchRegex']">{{contactForm.controls.emailControl.errors['noMatchRegex']['errorMEssage']}}</mat-error>
+        <mat-error *ngIf="contactForm.controls.emailControl.errors && contactForm.controls.emailControl.errors['email']">Must enter a valid email address.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearence="outline" [color]="'accent'">
+        <mat-label>Leave a message</mat-label>
+        <textarea 
+          matInput 
+          placeholder="Ex. It makes me feel..."
+          formControlName="messageControl"
+          required
+        ></textarea>
+        <mat-error *ngIf="contactForm.controls.messageControl.errors && contactForm.controls.messageControl.errors['required']">A message is required.</mat-error>
+      </mat-form-field>
+      <button class="send-whatsapp-button" mat-fab type="submit" aria-label="Send WhatsApp">
+        <mat-icon>send</mat-icon>
+      </button>
+    </form>
+  </div>
 </section>
