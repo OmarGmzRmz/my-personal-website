@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import Typed, { TypedOptions } from 'typed.js';
 
@@ -110,7 +110,7 @@ contactForm = new FormGroup({
     }
     return null;
   }]),
-  messageControl: new FormControl('', [Validators.required])
+  messageControl: new FormControl('', [Validators.required, Validators.minLength(10)])
 });
 isSendEmail = false;//#endregion
 
@@ -178,20 +178,26 @@ isSendEmail = false;//#endregion
   }
   //#region Contact Form
   submitContactForm() {
-    if (this.contactForm.valid) {
-      if (!this.isSendEmail) {
-        // Send WhatsApp
-        const name = this.contactForm.controls.nameControl.value;
-        const message = this.contactForm.controls.messageControl.value;
-        const phoneNumber = '5214525255286';
-        const whatsAppMessage = `Hola soy ${name}. `
-        window.open(`https://wa.me/${phoneNumber}?text=`);
-
-      } else {
-        // Sen Email
-      }
-    }
+    console.log('se llamo la funcion');
+    if (!this.isSendEmail) {
+      // Send WhatsApp
+      if (
+        this.contactForm.controls.nameControl.valid &&
+        this.contactForm.controls.messageControl.valid
+        ) {
+          const name = this.contactForm.controls.nameControl.value;
+          const message = this.contactForm.controls.messageControl.value;
+          const phoneNumber = '5214525255286';
+          const whatsAppMessage = `Hola soy ${name}. ${message} `
+          const encoded = encodeURIComponent(whatsAppMessage); // Ex. Hola. Como estas? -> Hola%20
+          window.open(`https://wa.me/${phoneNumber}?text=${encoded}`);
+        } else {
+          alert('Submitted form is invalid');
+        }
+    } else {
+      // Send  Email
   }
+}
 
   //Practice
   onButtonClick() {
