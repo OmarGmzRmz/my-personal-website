@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { ContactService } from 'src/app/services/contact.service';
+import { DialogService } from 'src/app/services/dialog.service';
 import Typed, { TypedOptions } from 'typed.js';
 
 @Component({
@@ -118,7 +120,10 @@ isSendEmail = false;//#endregion
 @ViewChild('myInput1', {static: true}) myNumericInput1: ElementRef | undefined;
 @ViewChild('myInput2', {static: true}) myNumericInput2: ElementRef | undefined;
 
-  constructor() { }
+  constructor(
+    private contactService: ContactService,
+    private dialogService: DialogService
+    ) { }
 
   ngOnInit(): void {
     const options0: TypedOptions = {
@@ -192,10 +197,30 @@ isSendEmail = false;//#endregion
           const encoded = encodeURIComponent(whatsAppMessage); // Ex. Hola. Como estas? -> Hola%20
           window.open(`https://wa.me/${phoneNumber}?text=${encoded}`);
         } else {
-          alert('Submitted form is invalid');
+          const message = 'Submitted form is valid';
+          const options = ['Ok'];
+          this.dialogService.openDialog(message, options).subscribe((result: string) => {
+
+          });
         }
     } else {
-      // Send  Email
+      if (
+        this.contactForm.controls.nameControl.valid &&
+        this.contactForm.controls.messageControl.valid &&
+        this.contactForm.controls.emailControl.valid
+      ) {
+        const name = this.contactForm.controls.nameControl.value;
+        const email = this.contactForm.controls.emailControl.value;
+        const message = this.contactForm.controls.messageControl.value;
+        this.contactService.sendEmail(name, email, message);
+        // TODO: Call email serivce
+      } else {
+        const message = 'Submitted form is valid';
+        const options = ['Ok'];
+        this.dialogService.openDialog(message, options).subscribe((result: string) => {
+
+        });
+      }
   }
 }
 

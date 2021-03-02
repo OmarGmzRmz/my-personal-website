@@ -30,6 +30,9 @@ import {MatInputModule} from '@angular/material/input';
 import { LoadingbarComponent } from './components/loadingbar/loadingbar.component';
 import { LoaderService } from './services/loader.service';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { ContactService } from './services/contact.service';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { DialogService } from './services/dialog.service';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -46,7 +49,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NotFoundComponent,
     PresentationCardComponent,
     SidebarComponent,
-    LoadingbarComponent
+    LoadingbarComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,12 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     provide: SWIPER_CONFIG,
     useValue: DEFAULT_SWIPER_CONFIG
   },
-  LoaderService
+  LoaderService,
+  ContactService,
+  DialogService
+],
+entryComponents: [
+  DialogComponent
 ],
   bootstrap: [AppComponent]
 })
