@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Hobbie } from '../../interfaces/hobbie';
 
 @Component({
   selector: 'app-hobbies-root',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HobbiesRootComponent implements OnInit {
 
-  constructor() { }
+  hobbies: Array<Hobbie> = [];
+
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.route.data.subscribe((data: any) => {
+      console.log('Resolved data:', data);
+      if (data.hobbiesInfo) {
+        this.hobbies = data.hobbiesInfo;
+      }
+    });
   }
 
 }
