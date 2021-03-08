@@ -1,5 +1,7 @@
 @import '~@angular/material/theming';
 
+$header-break: 820px;
+
 @mixin header-theme($light-theme) {
   $primary: map-get($light-theme, primary);
   $accent: map-get($light-theme, accent);
@@ -21,6 +23,8 @@
         margin: auto;
         width: 100%;
         span {
+          display: flex;
+          align-items: center;
           cursor: pointer;
           &:hover {
             text-decoration: underline;
@@ -53,8 +57,12 @@
             }
           }
         }
+        .profile-image {
+          background-image: url('/assets/icons/mac-home-folder.png');
+          background-size: contain;
+        }
       }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: $header-break) {
         display: none;
       }
     }
@@ -63,6 +71,7 @@
       z-index: 10;
       position: fixed;
       overflow-x: hidden;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
       top: 0px;
       height: 0px;
       opacity: 0;
@@ -74,6 +83,8 @@
         margin: auto;
         width: 100%;
         span {
+          display: flex;
+          align-items: center;
           cursor: pointer;
           &:hover {
             text-decoration: underline;
@@ -106,34 +117,66 @@
             }
           }
         }
+        .profile-image {
+          background-image: url('/assets/icons/mac-home-folder.png');
+          background-size: contain;
+        }
       }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: $header-break) {
         display: none;
       }
     }
     
-    .header-mobile {
-      z-index: 10;
-      position: relative;
-      overflow-x: hidden;
-      display: none;
-      span {
-        cursor: pointer;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-      @media screen and (max-width: 768px) {
-        display: flex;
-      }
-    }
-
-    .sticky {
-      height: 64px;
-      opacity: 1;
-      transition: opacity 0.65s ease-out, height 0.25s ease;
+.header-mobile {
+  z-index: 10;
+  position: relative;
+  overflow-x: hidden;
+  display: none;
+  span {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
     }
   }
+  .profile-image {
+    background-image: url('/assets/icons/mac-home-folder.png');
+    background-size: contain;
+  }
+  @media screen and (max-width: $header-break) {
+    display: flex;
+  }
+}
+
+.sticky-header-mobile {
+  z-index: 10;
+  position: fixed;
+  overflow-x: hidden;
+  display: none;
+  top: 0px;
+  height: 0px;
+  opacity: 0;
+  transition: opacity 0.25s ease-out, height 0.15s ease;
+  span {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .profile-image {
+    background-image: url('/assets/icons/mac-home-folder.png');
+    background-size: contain;
+  }
+  @media screen and (max-width: $header-break) {
+    display: flex;
+  }
+}
+
+  .sticky {
+    height: 64px;
+    opacity: 1;
+    transition: opacity 0.65s ease-out, height 0.25s ease;
+  }
+}
   
   ::ng-deep {
   .settings-menu {

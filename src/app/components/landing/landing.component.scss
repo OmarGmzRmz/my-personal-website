@@ -89,6 +89,63 @@
     }
   }
 
+@keyframes float {
+  0% {
+    // box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    // box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    // box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+    }
+}
+
+@keyframes float2 {
+  0% {
+    // box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(-20px);
+  }
+  50% {
+    // box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: translatey(0px);
+  }
+  100% {
+    // box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(-20px);
+    }
+}
+
+.services-section {
+  .services-container {
+    max-width: 1280px;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-between;
+    .service-container {
+      margin: 30px;
+      max-width: 300px;
+      .icon-container{
+        text-align: center;
+        i {
+          font-size: 70px;
+        }
+      }
+      margin: 30px;
+      .title {
+        font-weight: 600px;
+        font-size: 20px;
+      }
+      .description {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
   .contact-section {
     .contact-container {
       max-width: 1280px;
@@ -109,3 +166,5 @@
       }
     }
   }
+
+  
