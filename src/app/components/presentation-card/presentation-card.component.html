@@ -6,15 +6,24 @@
   </mat-card-header>
   <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <mat-card-content>
-    <p class="card-content-description">
-        {{phoneNumber}}
-      </p>
-    <p class="card-content-description email">
+    <div>
+      <i class="fas fa-phone-alt"></i>
+      <p class="card-content-description">
+          {{phoneNumber}}
+        </p>
+    </div>
+    <div>
+      <i class="fas fa-envelope"></i>
+      <p class="card-content-description email">
         {{emailAddress}}
       </p>
-    <p class="card-content-description">
-        {{physicalAddress}}
-      </p>
+    </div>
+    <div>
+      <i class="fas fa-map-marker-alt"></i>
+      <p class="card-content-description">
+          {{physicalAddress}}
+        </p>
+    </div>
   </mat-card-content>
   <!-- <mat-card-actions>
   </mat-card-actions> -->
