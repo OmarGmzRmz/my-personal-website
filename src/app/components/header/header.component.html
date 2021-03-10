@@ -1,24 +1,29 @@
 <!-- #region Desktop header -->
-<mat-toolbar class="header"color="primary">
-  <div class="header-container">
-    <span (click)="navigateToHomePage()">{{name}}</span>
-    <span class="spacer"></span>
-    <div class="navigation-container">
-      <div routerLink="/home" routerLinkActive="active">Home</div>
-      <div routerLink="/about" routerLinkActive="active">About</div>
-      <div routerLink="/cv" routerLinkActive="active">CV</div>
-      <div routerLink="/projects" routerLinkActive="active">Projects</div>
-      <div routerLink="/hobbies" routerLinkActive="active">Hobbies</div>
+<div style="position: relative;">
+  <mat-toolbar class="header"color="primary">
+    <div class="header-container">
+      <span (click)="navigateToHomePage()">{{name}}</span>
+      <span class="spacer"></span>
+      <div class="navigation-container">
+        <div routerLink="/home" routerLinkActive="active">Home</div>
+        <div routerLink="/about" routerLinkActive="active">About</div>
+        <div routerLink="/cv" routerLinkActive="active">CV</div>
+        <div routerLink="/projects" routerLinkActive="active">Projects</div>
+        <div routerLink="/hobbies" routerLinkActive="active">Hobbies</div>
+      </div>
+      <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
+        <mat-icon>share</mat-icon>
+      </button>
+      <button mat-icon-button  [matMenuTriggerFor]="settingsMenu" aria-label="setting icon button">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <div mat-card-avatar class="profile-image"></div>
     </div>
-    <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
-      <mat-icon>share</mat-icon>
-    </button>
-    <button mat-icon-button  [matMenuTriggerFor]="settingsMenu" aria-label="setting icon button">
-      <mat-icon>settings</mat-icon>
-    </button>
-    <div mat-card-avatar class="profile-image"></div>
+  </mat-toolbar>
+  <div class="progress-container">
+    <div id="scrollIndicatorBar" class="progress-bar"></div>
   </div>
-</mat-toolbar>
+</div>
 
 <mat-toolbar class="sticky-header" [ngClass]="{'sticky': isSticky}" color="primary">
   <div class="header-container">
@@ -55,6 +60,7 @@
   <div mat-card-avatar class="profile-image"></div>
 </mat-toolbar>
 
+
 <mat-toolbar class="sticky-header-mobile" [ngClass]="{'sticky': isSticky}" color="primary">
   <button mat-icon-button (click)="toggleSidenav.emit()" aria-label="menu icon-button">
     <mat-icon>menu</mat-icon>
@@ -70,6 +76,7 @@
 
 <app-loadingbar></app-loadingbar>
 
+<!-- #region Menus -->
 <mat-menu #shareMenu="matMenu">
   <button mat-menu-item>Copy link</button>
   <button mat-menu-item>Share on Facebook</button>
@@ -82,7 +89,7 @@
     <mat-radio-button [color]="'primary'" value="dark-theme">Dark</mat-radio-button>
   </mat-radio-group>
 </mat-menu>
-
+<!-- #endregion -->
 
 
 <!-- <div style="border: 1px solid red; width: 50px; height: 50px; border-radius: 5px; margin: 5px;"></div> -->

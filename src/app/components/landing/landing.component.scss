@@ -58,7 +58,8 @@
               .container {
                 font-family: Monaco, Consolas, "Lucida Console", monospace;
                 background-color: black;
-                color: #1EFF00;
+                color: white;
+                //color: #1EFF00;
                 min-height: 200px;
                 padding: 10px 60px 10px 10px;
                 border-bottom-right-radius: 5px;
@@ -73,7 +74,7 @@
         .parallax-slide {
           overflow: hidden;
           position: relative;
-          background-image: url(https://images.unsplash.com/photo-1415018255745-0ec3f7aee47b?dpr=1&auto=format&fit=crop&w=1500&h=938&q=80&cs=tinysrgb&crop=);
+          background-image: url(https://images.pexels.com/photos/132700/pexels-photo-132700.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
           background-attachment: fixed;
           background-size: cover;
           resize: both;

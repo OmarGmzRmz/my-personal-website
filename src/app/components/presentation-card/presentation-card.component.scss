@@ -22,16 +22,23 @@
             align-items: center;
         }
     }
-    .example-header-image {
+    .profile-image {
         background-image: url('/assets/profile-pictures/profile-picture.jpg');
         background-size: cover;
-      }
-      .card-content-description {
-        white-space: normal;
-        margin-bottom: 0px;
     }
-    .email {
-        word-break: break-all;
+    .card-field {
+        display: flex;
+        align-items: baseline;
+        .fas {
+            margin-right: 10px;
+        }
+        .card-content-description {
+            white-space: normal;
+            margin-bottom: 0px;
+        }
+        .email {
+            word-break: break-all;
+        }
     }
     .info-button {
         color: gray;

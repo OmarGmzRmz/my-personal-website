@@ -8,16 +8,29 @@ $header-break: 820px;
   $track-color: mat-color($primary);
   $thumb-color: mat-color($accent);
 
+  .progress-container {
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    z-index: 11;
+    bottom: 0px;
+    .progress-bar {
+      height: 4px;
+      width: 0%;
+      background-color: mat-color($accent);
+    }
+  }
+
   .spacer {
       display: flex;
       flex-grow: 1;
       justify-content: center;
     }
-
+    /* #region Desktop header */
   .header {
     z-index: 10;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     .header-container {
       display: flex;
@@ -32,30 +45,30 @@ $header-break: 820px;
           text-decoration: underline;
         }
       }
-    }
-    .navigation-container {
-      display: flex;
-      div {
-        position: relative;
-        outline: none;
-        cursor: pointer;
-        margin-right: 10px;
-        text-decoration: none;
-        outline: none;
-        &:hover {
-          color:mat-color($accent);
-        }
-        &:visited {
-          color: inherit;
-        }
-        &.active {
-          &:before {
-            content: '';
-            position: absolute;
-            height: 2px;
-            background-color: white;
-            width: 100%;
-            bottom: 0px;
+      .navigation-container {
+        display: flex;
+        div {
+          position: relative;
+          outline: none;
+          cursor: pointer;
+          margin-right: 10px;
+          text-decoration: none;
+          outline: none;
+          &:hover {
+            color:mat-color($accent);
+          }
+          &:visited {
+            color: inherit;
+          }
+          &.active {
+            &:before {
+              content: '';
+              position: absolute;
+              height: 2px;
+              background-color: white;
+              width: 100%;
+              bottom: 0px;
+            }
           }
         }
       }
@@ -72,7 +85,7 @@ $header-break: 820px;
   .sticky-header {
     z-index: 10;
     position: fixed;
-    overflow-x: hidden;
+    overflow: hidden;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     top: 0px;
     height: 0px;
@@ -119,16 +132,18 @@ $header-break: 820px;
           }
         }
       }
-      .profile-image {
-        background-image: url('/assets/profile-pictures/profile-picture.jpg');
-        background-size: cover;
-      }
+    }
+    .profile-image {
+      background-image: url('/assets/profile-pictures/profile-picture.jpg');
+      background-size: cover;
     }
     @media screen and (max-width: $header-break) {
       display: none;
     }
   }
-    
+  /* #endregion */
+
+  /* #region Mobile header */
   .header-mobile {
     z-index: 10;
     position: relative;
@@ -172,6 +187,7 @@ $header-break: 820px;
       display: flex;
     }
   }
+    /* #endregion */
 
   .sticky {
     height: 64px;

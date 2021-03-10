@@ -1,5 +1,5 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, OnDestroy } from '@angular/core';
+import { Component, HostListener, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { pairwise, skip } from 'rxjs/operators';
 import { ThemeService } from './shared/services/theme.service';
@@ -12,6 +12,17 @@ import { ThemeService } from './shared/services/theme.service';
 export class AppComponent implements OnDestroy {
   theme = 'light-theme';
   selectedThemesubscription: Subscription | undefined;
+
+    //#region Scroll Indicator
+@HostListener('window:scroll', ['$event'])
+onScroll(event: any) {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  console.log('Scrolled', scrolled);
+  document.getElementById('scrollIndicatorBar')!.style.width = scrolled + '%';
+}
+  //#endregion 
 
   constructor(private themeService: ThemeService, private overlayContainer: OverlayContainer) {
 

@@ -18,11 +18,11 @@ export class HeaderComponent implements OnInit {
   themeControl = new FormControl('light-theme', [Validators.required]);
 
 /* #region Sticky header */
-isSticky = false;
-@HostListener('window:scroll', [])
-checkScroll() {
-  this.isSticky = window.pageYOffset >= 250;
-}
+  isSticky = false;
+  @HostListener('window:scroll', [])
+  checkScroll() {
+    this.isSticky = window.pageYOffset >= 250;
+  }
 /* #endregion */
 
   constructor(
