@@ -1,29 +1,28 @@
 <!-- #region Desktop header -->
-<div style="position: relative;">
-  <mat-toolbar class="header"color="primary">
-    <div class="header-container">
-      <span (click)="navigateToHomePage()">{{name}}</span>
-      <span class="spacer"></span>
-      <div class="navigation-container">
-        <div routerLink="/home" routerLinkActive="active">Home</div>
-        <div routerLink="/about" routerLinkActive="active">About</div>
-        <div routerLink="/cv" routerLinkActive="active">CV</div>
-        <div routerLink="/projects" routerLinkActive="active">Projects</div>
-        <div routerLink="/hobbies" routerLinkActive="active">Hobbies</div>
-      </div>
-      <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
-        <mat-icon>share</mat-icon>
-      </button>
-      <button mat-icon-button  [matMenuTriggerFor]="settingsMenu" aria-label="setting icon button">
-        <mat-icon>settings</mat-icon>
-      </button>
-      <div mat-card-avatar class="profile-image"></div>
+<mat-toolbar class="header"color="primary">
+  <div class="header-container">
+    <span (click)="navigateToHomePage()">{{name}}</span>
+    <span class="spacer"></span>
+    <div class="navigation-container">
+      <div routerLink="/home" routerLinkActive="active">Home</div>
+      <div routerLink="/about" routerLinkActive="active">About</div>
+      <div routerLink="/cv" routerLinkActive="active">CV</div>
+      <div routerLink="/projects" routerLinkActive="active">Projects</div>
+      <div routerLink="/hobbies" routerLinkActive="active">Hobbies</div>
     </div>
-  </mat-toolbar>
-  <div class="progress-container">
-    <div id="scrollIndicatorBar" class="progress-bar"></div>
+    <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
+      <mat-icon>share</mat-icon>
+    </button>
+    <button mat-icon-button  [matMenuTriggerFor]="settingsMenu" aria-label="setting icon button">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <div mat-card-avatar class="profile-image"></div>
   </div>
-</div>
+  <div class="progress-indicator-container">
+    <app-scroll-indicator [indicatorName]="'scroll-indicator-header'"></app-scroll-indicator>
+  </div>
+</mat-toolbar>
+
 
 <mat-toolbar class="sticky-header" [ngClass]="{'sticky': isSticky}" color="primary">
   <div class="header-container">
@@ -44,6 +43,9 @@
     </button>
     <div mat-card-avatar class="profile-image"></div>
   </div>
+  <div class="progress-indicator-container">
+    <app-scroll-indicator [indicatorName]="'scroll-indicator-sticky-header'"></app-scroll-indicator>
+  </div>
 </mat-toolbar>
 <!-- #endregion -->
 
@@ -58,6 +60,9 @@
     <mat-icon>share</mat-icon>
   </button>
   <div mat-card-avatar class="profile-image"></div>
+  <div class="progress-indicator-container">
+    <app-scroll-indicator [indicatorName]="'scroll-indicator-header-mobile'"></app-scroll-indicator>
+  </div>
 </mat-toolbar>
 
 
@@ -71,6 +76,9 @@
     <mat-icon>share</mat-icon>
   </button>
   <div mat-card-avatar class="profile-image"></div>
+  <div class="progress-indicator-container">
+    <app-scroll-indicator [indicatorName]="'scroll-indicator-sticky-header-mobile'"></app-scroll-indicator>
+  </div>
 </mat-toolbar>
 <!-- #endregion -->
 

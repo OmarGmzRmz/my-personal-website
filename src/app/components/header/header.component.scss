@@ -42,7 +42,7 @@ $header-break: 820px;
         align-items: center;
         cursor: pointer;
         &:hover {
-          text-decoration: underline;
+          color: mat-color($accent);
         }
       }
       .navigation-container {
@@ -77,6 +77,12 @@ $header-break: 820px;
         background-size: cover;
       }
     }
+    .progress-indicator-container {
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;    
+    }
     @media screen and (max-width: $header-break) {
       display: none;
     }
@@ -102,7 +108,7 @@ $header-break: 820px;
         align-items: center;
         cursor: pointer;
         &:hover {
-          text-decoration: underline;
+          color: mat-color($accent);
         }
       }
     }
@@ -137,6 +143,12 @@ $header-break: 820px;
       background-image: url('/assets/profile-pictures/profile-picture.jpg');
       background-size: cover;
     }
+    .progress-indicator-container {
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;    
+    }
     @media screen and (max-width: $header-break) {
       display: none;
     }
@@ -158,6 +170,12 @@ $header-break: 820px;
     .profile-image {
       background-image: url('/assets/profile-pictures/profile-picture.jpg');
       background-size: contain;
+    }
+    .progress-indicator-container {
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;    
     }
     @media screen and (max-width: $header-break) {
       display: flex;
@@ -182,6 +200,12 @@ $header-break: 820px;
     .profile-image {
       background-image: url('/assets/profile-pictures/profile-picture.jpg');
       background-size: contain;
+    }
+    .progress-indicator-container {
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;    
     }
     @media screen and (max-width: $header-break) {
       display: flex;

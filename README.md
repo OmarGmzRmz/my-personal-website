@@ -1,6 +1,6 @@
 # PersonalWebsite
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0.
 
 ## Development server
 
@@ -26,9 +26,66 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Features
+
+### Scroll to top button 
+
+### Parallax effects
+
+### ParticleJS
+
+### Diaog service
+
+### Resolvers multiple calls
+
+See application resolver services
+
+### TypedJS
+
+### Themes
+
+Theme selection storing previously used theme in localstorage
+https://medium.com/grensesnittet/dynamic-themes-in-angular-material-b6dc0c88dfd7
+And some modifications. Behavio subject to subscribe to theme changes.
+
+### Swipper
+
+### Loading bar
+
+See loader.service.ts
+
+### Simulated API calls
+
+### Sidebar
+
+Using Angular Material drawer
+
+### Zoom in animation 
+
+See projects section
+
+### Send whatsapp
+
+See landing page
+
+### Sticky header
+
+See projects section
+
+### Scroll indicator progress bar
+
+See code sections with tag Scroll indicator bar
+
 ## Other topics
 
 Camel case: myVariable
 Kebab case: my-variable
 Pascal case: MyVariable
-Snake case: my_variable
+Sanke case: my_variable
+
+## Next topics
+
+* Observbables
+* Services
+* Route resolvers
+* Local state management
