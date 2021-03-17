@@ -12,10 +12,10 @@ import { PrivacyDialogComponent } from 'src/app/shared/components/privacy-dialog
 })
 export class FooterComponent implements OnInit {
   nameFooter = 'Omar Eliseo Gómez Ramirez';
-  titleFooter = 'Ing. Mecatrónico';
+  titleFooter = 'Ingeniero Mecatrónico';
   phoneNumberFooter = '452 525 52 86';
   emailAddressFooter = 'gomar8138@gmail.com';
-  physicalAddressFooter = 'Av. Morelos 1, San Felipe de los Herreros, Charapan, Michoacán, 60241';
+  physicalAddressFooter = 'San Felipe de los Herreros, Charapan, Michoacán, 60241';
   public text = 'Omar Gómez Ramírez';
   showInfo: any;
   constructor( public dialog: MatDialog) { }

@@ -1,6 +1,6 @@
 @import '@angular/material/theming';
 
-$loadingbar-height: 3px;
+  $loadingbar-height: 4px;
   $loadingbar-height-mobile: 4px;
   $glow-thickness: 0px;
   $header-height: 61px;
@@ -10,8 +10,8 @@ $loadingbar-height: 3px;
   $accent: map-get($light-theme, accent);
   $track-color: mat-color($primary);
   $thumb-color: mat-color($accent);
+
   // Style configuration
-  
   $color1: $track-color;
   $color2: $thumb-color;
   
@@ -19,10 +19,11 @@ $loadingbar-height: 3px;
     visibility: hidden;
   }
   .loader-overlay {
-    position: fixed;
+    position: absolute;
     width: 100%;
     z-index: 10;
-    top: $header-height;
+    bottom: 0px;
+    left: 0px;
   }
   .loader {
     height: $loadingbar-height;
@@ -36,18 +37,18 @@ $loadingbar-height: 3px;
     @media screen and (max-width: 425px) {
       height: $loadingbar-height-mobile;
     }
-  }
-  .loader:before {
-    display: block;
-    position: absolute;
-    content: "";
-    left: -200px;
-    width: 200px;
-    height: $loadingbar-height;
-    background-color: $color2;
-    animation: loading 2s linear infinite;
-    @media screen and (max-width: 425px) {
-      height: $loadingbar-height-mobile;
+    &::before {
+      display: block;
+      position: absolute;
+      content: "";
+      left: -200px;
+      width: 200px;
+      height: $loadingbar-height;
+      background-color: $color2;
+      animation: loading 2s linear infinite;
+      @media screen and (max-width: 425px) {
+        height: $loadingbar-height-mobile;
+      }
     }
   }
   @keyframes loading {
@@ -61,11 +62,14 @@ $loadingbar-height: 3px;
 }
 
 ::ng-deep {
-    .dark-theme {
-      .loader {
-        .loader:before {
-          background-color: white;
-        }
+  .light-theme {
+    .loader:before {
+      //background-color: ;
+    }
+  }
+  .dark-theme {
+    .loader:before {
+      background-color: white;
     }
   }
 }

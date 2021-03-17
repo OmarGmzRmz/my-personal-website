@@ -35,7 +35,7 @@ export class AppComponent implements OnDestroy {
     this.selectedThemesubscription = this.themeService.selectedTheme$.pipe(
       pairwise()
     ).subscribe((theme) => {
-      console.log('pair', theme);
+      //console.log('pair', theme);
       const previous = theme[0];
       const current = theme[1];
       this.theme = current;

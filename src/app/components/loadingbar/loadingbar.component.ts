@@ -15,7 +15,6 @@ export class LoadingbarComponent implements OnInit {
 
   ngOnInit() {
     this.loaderService.loaderState.subscribe((state: LoaderState) => {
-      console.log('New value emmited');
       this.show = state.show;
     });
   }

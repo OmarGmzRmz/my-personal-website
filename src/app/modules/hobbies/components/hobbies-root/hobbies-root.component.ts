@@ -17,7 +17,6 @@ export class HobbiesRootComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: any) => {
-      console.log('Resolved data:', data);
       if (data.hobbiesInfo) {
         this.hobbies = data.hobbiesInfo;
       }

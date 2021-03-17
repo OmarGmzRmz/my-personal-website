@@ -21,4 +21,17 @@ sendEmail(name: string, email: string, message: string): Observable<boolean> {
   });
 }
 
+sendFeedback(description: string, screenshot: string): Observable<boolean> {
+  this.loaderService.show();
+  //TODO: Make http call to API
+  
+  return new Observable(obs => {
+    setTimeout(() => {
+      obs.next(true);
+      obs.complete();
+      this.loaderService.hide();
+    }, 5000);
+  });
+}
+
 }

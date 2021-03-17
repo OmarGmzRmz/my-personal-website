@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Hobbie } from '../interfaces/hobbie';
 import { HobbiesService } from './hobbies.service';
 
 @Injectable({

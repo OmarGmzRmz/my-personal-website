@@ -31,12 +31,12 @@ export class HeaderComponent implements OnInit {
   ) {
 
     // Code executes on component initialization
-    console.log('Executing constructor');
+    //console.log('Executing constructor');
   }
 
   ngOnInit(): void {
     // Code executes after component has been initialized
-    console.log('Executing ngOnInit');
+    //console.log('Executing ngOnInit');
     this.themeService.selectedTheme$.pipe(skip(0)).subscribe((theme: string) => {
       this.themeControl.setValue(theme, {emitEvent: false});
     });

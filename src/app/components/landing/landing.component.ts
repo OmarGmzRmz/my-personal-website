@@ -14,6 +14,10 @@ export class LandingComponent implements OnInit {
   //#region Swiper
   index = 0;
   config: SwiperConfigInterface = {
+    autoplay: {
+      delay: 14000,
+      disableOnInteraction: true
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -183,7 +187,6 @@ isSendEmail = false;//#endregion
   }
   //#region Contact Form
   submitContactForm() {
-    console.log('se llamo la funcion');
     if (!this.isSendEmail) {
       // Send WhatsApp
       if (
@@ -232,6 +235,5 @@ isSendEmail = false;//#endregion
   }
   //Practice
   onInputBlur(event: any) {
-    console.log(event);
   }
 }

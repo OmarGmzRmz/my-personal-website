@@ -24,7 +24,6 @@ export class ProjectDetailResolverService implements Resolve<any>{
             project
           }
         } else {
-          console.log('Returning null');
           return {
             project: null
           }
