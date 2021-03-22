@@ -164,7 +164,7 @@ $header-break: 820px;
     span {
       cursor: pointer;
       &:hover {
-        text-decoration: underline;
+        color: mat-color($accent)
       }
     }
     .profile-image {
@@ -195,7 +195,7 @@ $header-break: 820px;
     span {
       cursor: pointer;
       &:hover {
-        text-decoration: underline;
+        color: mat-color($accent)
       }
     }
     .profile-image {

@@ -35,6 +35,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { DialogService } from './services/dialog.service';
 import { ScrollIndicatorComponent } from './components/scroll-indicator/scroll-indicator.component';
 import { NgxMdFeedbackModule } from '@digikare/ngx-md-feedback';
+import { HightLightDirective } from './directives/hight-light.directive';
+import { BetterDirectiveDirective } from './directives/better-directive.directive';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -53,7 +55,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SidebarComponent,
     LoadingbarComponent,
     DialogComponent,
-    ScrollIndicatorComponent
+    ScrollIndicatorComponent,
+    HightLightDirective,
+    BetterDirectiveDirective
   ],
   imports: [
     BrowserModule,

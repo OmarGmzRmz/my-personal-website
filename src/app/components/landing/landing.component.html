@@ -64,9 +64,9 @@
   </div>
 </div>
 
+<!-- practice -->
 <section>
   <span class="typed-element"></span>
-  <!-- practice -->
   <input #myInput1 type="number" (blur)="onInputBlur($event)">
   <input #myInput2 type="number" >
   <button (click)="onButtonClick()">Click me</button>
@@ -76,6 +76,10 @@
       This is some random content
     </div>
   </app-cool-border>
+  <!-- Not the best practice -->
+  <button appHightLight>Style me using basic directive</button>
+  <!-- Best practice -->
+  <button appBetterDirective>Style me using basic directive</button>
 </section>
 
 <section class="services-section">

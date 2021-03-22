@@ -6,10 +6,11 @@
   a {
       position: relative;
       padding: 10px 20px;
+     // color: blueviolet;
       cursor: pointer;
       text-decoration: none;
       &:visited {
-        color: inherit;
+       color: inherit;
       }
       &.active {
         &:before {
@@ -61,9 +62,23 @@
 }
 
 // Custom component override theming
-/* ::ng-deep .light-theme .sidenav-container .navigation-container a {
-  background-color: red;
+::ng-deep .light-theme .sidenav-container .navigation-container a {
+  border-bottom: 1px solid gainsboro;
+  color: black;
+  &:visited {
+    color: black;
+  }
+  &:active {
+    background-color: gainsboro;
+  }
 }
 ::ng-deep .dark-theme .sidenav-container .navigation-container a {
-  background-color: blue;
-} */
+  border-bottom: 1px solid #5f5f5f;
+  color: white;
+  &:visited {
+    color: white;
+  }
+  &:active {
+    background-color: gray;
+  }
+}
