@@ -1,4 +1,7 @@
+import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { ThemeService } from 'src/app/shared/services/theme.service';
 
 @Component({
   selector: 'app-about-root',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutRootComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private themeService: ThemeService,
+    private overlayContainer: OverlayContainer,
+    private translateService: TranslateService
+    
+  ) {
+    translateService.setDefaultLang('en');
+    translateService.use('en');
+  }
 
   ngOnInit(): void {
   }

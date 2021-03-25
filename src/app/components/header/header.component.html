@@ -4,11 +4,11 @@
     <span (click)="navigateToHomePage()">{{name}}</span>
     <div class="spacer"></div>
     <div class="navigation-container">
-      <div routerLink="/home" routerLinkActive="active">Home</div>
-      <div routerLink="/about" routerLinkActive="active">About</div>
-      <div routerLink="/cv" routerLinkActive="active">CV</div>
-      <div routerLink="/projects" routerLinkActive="active">Projects</div>
-      <div routerLink="/hobbies" routerLinkActive="active">Hobbies</div>
+      <div routerLink="/home" routerLinkActive="active">{{ 'HEADER.HOME' | translate }}</div>
+      <div routerLink="/about" routerLinkActive="active">{{ 'HEADER.ABOUT' | translate }}</div>
+      <div routerLink="/cv" routerLinkActive="active">{{ 'HEADER.CV' | translate }}</div>
+      <div routerLink="/projects" routerLinkActive="active">{{ 'HEADER.PROJECTS' | translate }}</div>
+      <div routerLink="/hobbies" routerLinkActive="active">{{ 'HEADER.HOBBIES' | translate }}</div>
     </div>
     <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
       <mat-icon>share</mat-icon>
@@ -30,11 +30,11 @@
     <span (click)="navigateToHomePage()">{{name}}</span>
     <div class="spacer"></div>
     <div class="navigation-container">
-      <div routerLink="/home" routerLinkActive="active">Home</div>
-      <div routerLink="/about" routerLinkActive="active">About</div>
-      <div routerLink="/cv" routerLinkActive="active">CV</div>
-      <div routerLink="/projects" routerLinkActive="active">Projects</div>
-      <div routerLink="/hobbies" routerLinkActive="active">Hobbies</div>
+      <div routerLink="/home" routerLinkActive="active">{{ 'HEADER.HOME' | translate }}</div>
+      <div routerLink="/about" routerLinkActive="active">{{ 'HEADER.ABOUT' | translate }}</div>
+      <div routerLink="/cv" routerLinkActive="active">{{ 'HEADER.CV' | translate }}</div>
+      <div routerLink="/projects" routerLinkActive="active">{{ 'HEADER.PROJECTS' | translate }}</div>
+      <div routerLink="/hobbies" routerLinkActive="active">{{ 'HEADER.HOBBIES' | translate }}</div>
     </div>
     <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
       <mat-icon>share</mat-icon>
@@ -53,10 +53,10 @@
 
 <!-- #region Mobile header -->
 <mat-toolbar class="header-mobile" color="primary">
-  <button mat-icon-button (click)="toggleSidenav.emit()" aria-label="menu icon-button">
+  <button class="hamburger" mat-icon-button (click)="toggleSidenav.emit()" aria-label="menu icon-button">
     <mat-icon>menu</mat-icon>
   </button>
-  <span (click)="navigateToHomePage()">{{initials}}</span>
+  <span class="initials" (click)="navigateToHomePage()">{{initials}}</span>
   <div class="spacer"></div>
   <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
     <mat-icon>share</mat-icon>
@@ -70,10 +70,10 @@
 
 
 <mat-toolbar class="sticky-header-mobile" [ngClass]="{'sticky': isSticky}" color="primary">
-  <button mat-icon-button (click)="toggleSidenav.emit()" aria-label="menu icon-button">
+  <button class="hamburger" mat-icon-button (click)="toggleSidenav.emit()" aria-label="menu icon-button">
     <mat-icon>menu</mat-icon>
   </button>
-  <span (click)="navigateToHomePage()">{{initials}}</span>
+  <span class="initials" (click)="navigateToHomePage()">{{initials}}</span>
   <div class="spacer"></div>
   <button mat-icon-button [disabled]="!enableShareButton" [matMenuTriggerFor]="shareMenu" aria-label="share icon button">
     <mat-icon>share</mat-icon>
@@ -88,15 +88,15 @@
 
 <!-- #region Menus -->
 <mat-menu #shareMenu="matMenu">
-  <button mat-menu-item>Copy link</button>
-  <button mat-menu-item>Share on Facebook</button>
-  <button mat-menu-item>Share on Tinder</button>
+  <button mat-menu-item>{{ 'HEADER.COPY LINK' | translate }}</button>
+  <button mat-menu-item>{{ 'HEADER.SHARE ON FACEBOOK' | translate }}</button>
+  <button mat-menu-item>{{ 'HEADER.SHARE ON TWITTER' | translate }}</button>
 </mat-menu>
 <mat-menu class="settings-menu" #settingsMenu="matMenu">
-  <div class="label">Theme</div>
+  <div class="label">{{ 'HEADER.THEME' | translate }}</div>
   <mat-radio-group class="theme-radio-group" aria-label="Select an option" [formControl]="themeControl">
-    <mat-radio-button [color]="'accent'" value="light-theme">Light</mat-radio-button>
-    <mat-radio-button [color]="'primary'" value="dark-theme">Dark</mat-radio-button>
+    <mat-radio-button [color]="'accent'" value="light-theme">{{ 'HEADER.LIGHT' | translate }}</mat-radio-button>
+    <mat-radio-button [color]="'primary'" value="dark-theme">{{ 'HEADER.DARK' | translate }}</mat-radio-button>
   </mat-radio-group>
 </mat-menu>
 <!-- #endregion -->

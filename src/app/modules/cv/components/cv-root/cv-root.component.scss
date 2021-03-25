@@ -83,7 +83,12 @@
           .link-container {
             display: flex;
             .icon {
-              margin-right: 5px;
+              display: flex;
+              display: flex;
+              align-items: baseline;
+              .fab {
+                margin-right: 10px;
+              }
             }
             .link {
               word-break: break-all;
@@ -95,7 +100,7 @@
           }
           .english-bar {
             height: 4px;
-            width: calc(80% - 20px);
+            width: calc(60% - 20px);
           }
         }
         .left-purple {

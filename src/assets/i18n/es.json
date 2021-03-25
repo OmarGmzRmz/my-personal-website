@@ -1,0 +1,61 @@
+{
+    "HEADER": {
+        "HOME": "Inicio",
+        "ABOUT": "Acerca de",
+        "CV": "CV",
+        "PROJECTS": "Proyectos",
+        "HOBBIES": "Pasatiempos",
+        "COPY LINK": "Copiar link",
+        "SHARE ON FACEBOOK": "Compartir en Facebook",
+        "SHARE ON TWITTER": "Compartir en Twitter",
+        "THEME": "Tema",
+        "LIGHT": "Ligero",
+        "DARK": "Obscuro"
+    },
+    "FOOTER": {
+        "HOME": "Inicio",
+        "ABOUT": "Acerca de",
+        "DESCRIPTION": "Descripción",
+        "BIOGRAPHY": "Biografía",
+        "CV": "CV",
+        "PROJECTS": "Proyectos",
+        "HOBBIES": "Pasatiempos",
+        "PRIVACY": "Política de privacidad",
+        "TERMS OF USE": "Términos de uso",
+        "FOLLOW ME": "Sigueme"
+    },
+    "LANDING": {
+        "CONTACT": "Contactar",
+        "WHATSAPP": "WhatsApp",
+        "EMAIL": "Correo Electrónico",
+        "FULL NAME": "Nombre completo",
+        "FULL NAME IS REQUIRED": "Se requiere el nombre completo.",
+        "LEAVE A MESSAGE": "Escriba un mensaje",
+        "A MESSAGE IS REQUIRED": "Se requiere un mensaje."
+    },
+    "SIDEBAR": {
+        "HOME": "Inicio",
+        "ABOUT": "Acerca de",
+        "CV": "CV",
+        "PROJECTS": "Proyectos",
+        "HOBBIES": "Pasatiempos",
+        "THEME": "Tema",
+        "LIGHT": "Ligero",
+        "DARK": "Obscuro"
+    },
+    "ABOUT": {
+        "ABOUT MYSELF": "Acerca de mi",
+        "PHRASE": "Nunca seas esclavo de tu pasado, sino arquitecto de tu futuro.",
+        "DESCRIPTION": "Descripción",
+        "BIOGRAPHY": "Biografía"
+    },
+    "CV": {
+        "EXPERIENCE": "Experiencia",
+        "PHRASE": "Make the change that you want to see in the world.",
+        "CURRICULUM VITAE": "Curriculum Vitae",
+        "RESUME": "Hoja de vida",
+        "OTHER ACTIVITIES": "Otras actividades",
+        "CHANGE COLOR": "Cambiar color",
+        "DOWNLOAD": "Descargar"
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "HEADER": {
+        "HOME": "Home",
+        "ABOUT": "About",
+        "CV": "CV",
+        "PROJECTS": "Projects",
+        "HOBBIES": "Hobbies",
+        "COPY LINK": "Copy link",
+        "SHARE ON FACEBOOK": "Share on Facebook",
+        "SHARE ON TWITTER": "Share on Twitter",
+        "THEME": "Theme",
+        "LIGHT": "Light",
+        "DARK": "Dark"
+    },
+    "FOOTER": {
+        "HOME": "Home",
+        "ABOUT": "About",
+        "DESCRIPTION": "Description",
+        "BIOGRAPHY": "Biography",
+        "CV": "CV",
+        "PROJECTS": "Projects",
+        "HOBBIES": "Hobbies",
+        "PRIVACY": "Privacy",
+        "TERMS OF USE": "Terms of use",
+        "FOLLOW ME": "Follow me"
+    },
+    "LANDING": {
+        "CONTACT": "Contact",
+        "WHATSAPP": "WhatsApp",
+        "EMAIL": "Email",
+        "FULL NAME": "Full name",
+        "FULL NAME IS REQUIRED": "Full name is required.",
+        "LEAVE A MESSAGE": "Leave a message",
+        "A MESSAGE IS REQUIRED": "A message is required."
+    },
+    "SIDEBAR": {
+        "HOME": "Home",
+        "ABOUT": "About",
+        "CV": "CV",
+        "PROJECTS": "Projects",
+        "HOBBIES": "Hobbies",
+        "THEME": "Theme",
+        "LIGHT": "Light",
+        "DARK": "Dark"
+    },
+    "ABOUT": {
+        "ABOUT MYSELF": "About myself",
+        "PHRASE": "Never be a slave to your past, but an architect of your future.",
+        "DESCRIPTION": "Description",
+        "BIOGRAPHY": "Biography"
+    },
+    "CV": {
+        "EXPERIENCE": "Experience",
+        "PHRASE": "Make the change that you want to see in the world.",
+        "CURRICULUM VITAE": "Curriculum Vitae",
+        "RESUME": "Resume",
+        "OTHER ACTIVITIES": "Other activities",
+        "CHANGE COLOR": "Change color",
+        "DOWNLOAD": "Download"
+    }
+}

@@ -1,6 +1,9 @@
+import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import * as html2canvas from 'html2canvas';
 import * as moment from 'moment';
+import { ThemeService } from 'src/app/shared/services/theme.service';
 
 @Component({
   selector: 'app-cv-root',
@@ -51,7 +54,15 @@ export class CvRootComponent implements OnInit {
   }
 ];
 
-  constructor() { }
+constructor(
+  private themeService: ThemeService,
+  private overlayContainer: OverlayContainer,
+  private translateService: TranslateService
+  
+) {
+  translateService.setDefaultLang('en');
+  translateService.use('en');
+}
 
   ngOnInit(): void {
   }

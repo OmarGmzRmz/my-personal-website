@@ -5,27 +5,7 @@ $header-break: 820px;
 @mixin header-theme($light-theme) {
   $primary: map-get($light-theme, primary);
   $accent: map-get($light-theme, accent);
-  $track-color: mat-color($primary);
-  $thumb-color: mat-color($accent);
 
-  .progress-container {
-    width: 100%;
-    height: 4px;
-    position: absolute;
-    z-index: 11;
-    bottom: 0px;
-    .progress-bar {
-      height: 4px;
-      width: 0%;
-      background-color: mat-color($accent);
-    }
-  }
-
-  .spacer {
-      display: flex;
-      flex-grow: 1;
-      justify-content: center;
-    }
     /* #region Desktop header */
   .header {
     z-index: 10;
@@ -44,6 +24,11 @@ $header-break: 820px;
         &:hover {
           color: mat-color($accent);
         }
+      }
+      .spacer {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
       }
       .navigation-container {
         display: flex;
@@ -110,37 +95,42 @@ $header-break: 820px;
           color: mat-color($accent);
         }
       }
-    }
-    .navigation-container {
-      display: flex;
-      div {
-        position: relative;
-        outline: none;
-        cursor: pointer;
-        margin-right: 10px;
-        text-decoration: none;
-        outline: none;
-        &:hover {
-          color:mat-color($accent);
-        }
-        &:visited {
-          color: inherit;
-        }
-        &.active {
-          &:before {
-            content: '';
-            position: absolute;
-            height: 2px;
-            background-color: white;
-            width: 100%;
-            bottom: 0px;
+      .spacer {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+      }
+      .navigation-container {
+        display: flex;
+        div {
+          position: relative;
+          outline: none;
+          cursor: pointer;
+          margin-right: 10px;
+          text-decoration: none;
+          outline: none;
+          &:hover {
+            color:mat-color($accent);
+          }
+          &:visited {
+            color: inherit;
+          }
+          &.active {
+            &:before {
+              content: '';
+              position: absolute;
+              height: 2px;
+              background-color: white;
+              width: 100%;
+              bottom: 0px;
+            }
           }
         }
       }
-    }
-    .profile-image {
-      background-image: url('/assets/profile-pictures/profile-picture.jpg');
-      background-size: cover;
+      .profile-image {
+        background-image: url('/assets/profile-pictures/profile-picture.jpg');
+        background-size: cover;
+      }
     }
     .progress-indicator-container {
       width: 100%;
@@ -161,11 +151,24 @@ $header-break: 820px;
     overflow-x: hidden;
     display: none;
     box-shadow: 0 0 1px 1px rgb(20 23 28 / 10%), 0 3px 1px 0 rgb(20 23 28 / 10%);
-    span {
+    .hamburger {
+      margin-left: -10px;
+      .mat-button-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .initials {
       cursor: pointer;
       &:hover {
-        color: mat-color($accent)
+        text-decoration: underline;
       }
+    }
+    .spacer {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
     }
     .profile-image {
       background-image: url('/assets/profile-pictures/profile-picture.jpg');
@@ -192,11 +195,24 @@ $header-break: 820px;
     opacity: 0;
     transition: opacity 0.25s ease-out, height 0.15s ease;
     box-shadow: 0 0 1px 1px rgb(20 23 28 / 10%), 0 3px 1px 0 rgb(20 23 28 / 10%);
-    span {
+    .hamburger {
+      margin-left: -10px;
+      .mat-button-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .initials {
       cursor: pointer;
       &:hover {
-        color: mat-color($accent)
+        text-decoration: underline;
       }
+    }
+    .spacer {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
     }
     .profile-image {
       background-image: url('/assets/profile-pictures/profile-picture.jpg');

@@ -39,13 +39,14 @@
         <Particles class="particles" [id]="id" [options]="particlesOptions"></Particles>
       </div>
 
-      <div class="swiper-slide">
+      <div class="swiper-slide parallax-slide">
         <div class="slide-container">
           <div>2</div>
           <div>Title</div>
           <div>subtitle</div>
           <div>Description</div>
         </div>
+        <Particles class="particles" [id]="id" [options]="particlesOptions"></Particles>
       </div>
       
       <div class="swiper-slide">
@@ -64,7 +65,7 @@
   </div>
 </div>
 
-<!-- practice -->
+<!--  practice 
 <section>
   <span class="typed-element"></span>
   <input #myInput1 type="number" (blur)="onInputBlur($event)">
@@ -76,11 +77,11 @@
       This is some random content
     </div>
   </app-cool-border>
-  <!-- Not the best practice -->
+  Not the best practice 
   <button appHightLight>Style me using basic directive</button>
-  <!-- Best practice -->
+   Best practice 
   <button appBetterDirective>Style me using basic directive</button>
-</section>
+</section> -->
 
 <section class="services-section">
   <div class="services-container">
@@ -113,26 +114,26 @@
 
 <section class="contact-section">
   <div class="contact-container">
-    <div class="section-title" >Contact</div>
+    <div class="section-title" >{{ 'LANDING.CONTACT' | translate }}</div>
     <form [formGroup]="contactForm" (ngSubmit)="submitContactForm()">
       <mat-button-toggle-group name="fontStyle" aria-label="Contact chanel" formControlName="toggleControl" required>
-        <mat-button-toggle value="whatsapp">WhatsApp</mat-button-toggle>
-        <mat-button-toggle value="email">Email</mat-button-toggle>
+        <mat-button-toggle value="whatsapp">{{ 'LANDING.WHATSAPP' | translate }}</mat-button-toggle>
+        <mat-button-toggle value="email">{{ 'LANDING.EMAIL' | translate }}</mat-button-toggle>
       </mat-button-toggle-group>
       <mat-form-field appearence="outline" [color]="'accent'">
-        <mat-label>Full Name</mat-label>
+        <mat-label>{{ 'LANDING.FULL NAME' | translate }}</mat-label>
         <input
           matInput
           placeholder="Ex. John Doe"
           formControlName="nameControl"
           required
         />
-        <mat-error *ngIf="contactForm.controls.nameControl.errors && contactForm.controls.nameControl.errors['required']">Full name is required.</mat-error>
+        <mat-error *ngIf="contactForm.controls.nameControl.errors && contactForm.controls.nameControl.errors['required']">{{ 'LANDING.FULL NAME IS REQUIRED' | translate }}</mat-error>
       </mat-form-field>
     </form>
     <form [formGroup]="contactForm">
       <mat-form-field appearence="outline" [color]="'accent'" *ngIf="isSendEmail">
-        <mat-label>Email</mat-label>
+        <mat-label>{{ 'LANDING.EMAIL' | translate }}</mat-label>
         <input
           matInput
           placeholder="Ex. john.doe@example.com"
@@ -143,14 +144,14 @@
         <mat-error *ngIf="contactForm.controls.emailControl.errors && contactForm.controls.emailControl.errors['email']">Must enter a valid email address.</mat-error>
       </mat-form-field>
       <mat-form-field appearence="outline" [color]="'accent'">
-        <mat-label>Leave a message</mat-label>
+        <mat-label>{{ 'LANDING.LEAVE A MESSAGE' | translate }}</mat-label>
         <textarea 
           matInput 
           placeholder="Ex. It makes me feel..."
           formControlName="messageControl"
           required
         ></textarea>
-        <mat-error *ngIf="contactForm.controls.messageControl.errors && contactForm.controls.messageControl.errors['required']">A message is required.</mat-error>
+        <mat-error *ngIf="contactForm.controls.messageControl.errors && contactForm.controls.messageControl.errors['required']">{{ 'LANDING.A MESSAGE IS REQUIRED' | translate }}</mat-error>
         <mat-error *ngIf="contactForm.controls.messageControl.errors && contactForm.controls.messageControl.errors['minlength']">Message requires a minimun length of {{contactForm.controls.messageControl.errors['minlength'].requiredLength}} characters.</mat-error>
       </mat-form-field>
       <button class="send-whatsapp-button" mat-fab type="submit" (click)="submitContactForm()" aria-label="Send WhatsApp">

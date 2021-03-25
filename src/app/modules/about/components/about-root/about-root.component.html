@@ -2,16 +2,15 @@
     <div class="jumbotron-container">
         <div class="jumbotron-overlay">
             <div class="elements-container">
-                <h1>About Myself</h1>
-                <h5>Make the change that you want to see in the world</h5>
+                <h1>{{ 'ABOUT.ABOUT MYSELF' | translate }}</h1>
+                <h5>{{ 'ABOUT.PHRASE' | translate }}</h5>
                 <button>Call action</button>
             </div>
         </div>
     </div>
 </section>
 <div class="tabs-navigation-container">
-    <a class="tab-selector" routerLink="active" [routerLink]="['./description']">Description</a>
-    <a class="tab-selector" routerLink="active" [routerLink]="['./biography']">Biography</a>
+    <a class="tab-selector" routerLink="active" [routerLink]="['./description']">{{ 'ABOUT.DESCRIPTION' | translate }}</a>
+    <a class="tab-selector" routerLink="active" [routerLink]="['./biography']">{{ 'ABOUT.BIOGRAPHY' | translate }}</a>
 </div>
 <router-outlet></router-outlet>
-"Make the changes that you want to see in the world"

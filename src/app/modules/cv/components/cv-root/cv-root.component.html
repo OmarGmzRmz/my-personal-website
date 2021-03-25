@@ -2,8 +2,8 @@
   <div class="jumbotron-container">
     <div class="jumbotron-overlay">
       <div class="elements-container">
-        <h1>Experience</h1>
-        <h5>Make the change that you want to see in the world</h5>
+        <h1>{{ 'CV.EXPERIENCE' | translate }}</h1>
+        <h5>{{ 'CV.PHRASE' | translate }}</h5>
         <button>Call action</button>
       </div>
     </div>
@@ -14,7 +14,7 @@
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">sticky_note_2</mat-icon>
-      <div class="label">Curriculum Vitae</div>
+      <div class="label">{{ 'CV.CURRICULUM VITAE' | translate }}</div>
     </ng-template>
     <div class="tab tab-resume">
       <div class="resume-container">
@@ -31,7 +31,9 @@
             <div> 01-19-1999</div>
             <div class="section-title">Links</div>
             <div class="link-container">
-              <div class="icon" class="fab fa-github"></div>
+              <div class="icon">
+                <i class="fab fa-github"></i>
+              </div>
               <div class="link">https://github.com/in/OmarGmzRmz</div>
             </div>
             <div class="section-title">Languages</div>
@@ -70,7 +72,7 @@
         <div class="controls-container">
           <div class="select-color-container">
             <div class="select-color-label">
-              Change color
+              {{ 'CV.CHANGE COLOR' | translate }}
             </div>
             <div class="color-container">
               <div tabindex="0" class="control purple focus-outline" (click)="isPurple = true; isBlue = false; leftPanelFontColor = 'white';"></div>
@@ -87,7 +89,7 @@
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">history_edu</mat-icon>
-      <div class="label">Resume</div>
+      <div class="label">{{ 'CV.RESUME' | translate }}</div>
     </ng-template>
     <div class="tab tab-resume">
       <div class="resume-container">
@@ -104,7 +106,9 @@
             <div> 01-19-1999</div>
             <div class="section-title">Links</div>
             <div class="link-container">
-              <div class="icon">Github icon</div>
+              <div class="icon">
+                <i class="fab fa-github"></i>
+              </div>
               <div class="link">https://github.com/in/OmarGmzRmz</div>
             </div>
             <div class="section-title">Languages</div>
@@ -143,7 +147,7 @@
         <div class="controls-container">
           <div class="select-color-container">
             <div class="select-color-label">
-              Change color
+              {{ 'CV.CHANGE COLOR' | translate }}
             </div>
             <div class="color-container">
               <div tabindex="0" class="control purple focus-outline" (click)="isPurple = true; isBlue = false; leftPanelFontColor = 'white';"></div>
@@ -160,22 +164,22 @@
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">spellcheck</mat-icon>
-      <div class="label">Other Activities</div>
+      <div class="label">{{ 'CV.OTHER ACTIVITIES' | translate }}</div>
     </ng-template>
     Content 3
   </mat-tab>
 </mat-tab-group>
 
-<button (click)="showDynamicDisplayContent = !showDynamicDisplayContent">Toggle div visibility</button>
+<!-- <button (click)="showDynamicDisplayContent = !showDynamicDisplayContent">Toggle div visibility</button>
 <div *ngIf="showDynamicDisplayContent; else myIdentifier" style="color: red;">Condition true dynamic content</div>
 <ng-template #myIdentifier>
   <div style="color: blue; height: 900px;">Else dynamic content</div>
-</ng-template>
+</ng-template> -->
 
 
-<div class="tabs-navigation-container">
+<!-- <div class="tabs-navigation-container">
   <a class="tab-selector" routerLink="active" [routerLink]="['./cv']">Curriculum Vitae</a>
   <a class="tab-selector" routerLink="active" [routerLink]="['./resume']">Resume</a>
-</div>
+</div> -->
 
 <router-outlet></router-outlet>

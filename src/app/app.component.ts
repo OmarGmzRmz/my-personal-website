@@ -1,5 +1,6 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, OnDestroy } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { pairwise, skip } from 'rxjs/operators';
 import { ThemeService } from './shared/services/theme.service';
@@ -13,8 +14,14 @@ export class AppComponent implements OnDestroy {
   theme = 'light-theme';
   selectedThemesubscription: Subscription | undefined;
 
-  constructor(private themeService: ThemeService, private overlayContainer: OverlayContainer) {
-
+  constructor(
+    private themeService: ThemeService,
+    private overlayContainer: OverlayContainer,
+    private translateService: TranslateService
+    
+  ) {
+    translateService.setDefaultLang('en');
+    translateService.use('en');
   }
 
   ngOnInit() {

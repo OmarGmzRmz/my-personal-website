@@ -37,6 +37,13 @@ import { ScrollIndicatorComponent } from './components/scroll-indicator/scroll-i
 import { NgxMdFeedbackModule } from '@digikare/ngx-md-feedback';
 import { HightLightDirective } from './directives/hight-light.directive';
 import { BetterDirectiveDirective } from './directives/better-directive.directive';
+import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -80,7 +87,15 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SharedModule,
     NgParticlesModule, 
     MatButtonToggleModule,
-    NgxMdFeedbackModule
+    NgxMdFeedbackModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [{
     provide: SWIPER_CONFIG,

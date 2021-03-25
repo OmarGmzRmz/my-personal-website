@@ -3,17 +3,17 @@
         <span>{{initials}}</span>
       </mat-toolbar>
       <div class="navigation-container">
-        <a routerLink="/home" routerLinkActive="active" (click)="sideBarNavigation.emit()">Home</a>
-        <a routerLink="/about" routerLinkActive="active" (click)="sideBarNavigation.emit()">About</a>
-        <a routerLink="/cv" routerLinkActive="active" (click)="sideBarNavigation.emit()">CV</a>
-        <a routerLink="/projects" routerLinkActive="active" (click)="sideBarNavigation.emit()">Projects</a>
-        <a routerLink="/hobbies" routerLinkActive="active" (click)="sideBarNavigation.emit()">Hobbies</a>
+        <div routerLink="/home" routerLinkActive="active">{{ 'SIDEBAR.HOME' | translate }}</div>
+      <div routerLink="/about" routerLinkActive="active">{{ 'SIDEBAR.ABOUT' | translate }}</div>
+      <div routerLink="/cv" routerLinkActive="active">{{ 'SIDEBAR.CV' | translate }}</div>
+      <div routerLink="/projects" routerLinkActive="active">{{ 'SIDEBAR.PROJECTS' | translate }}</div>
+      <div routerLink="/hobbies" routerLinkActive="active">{{ 'SIDEBAR.HOBBIES' | translate }}</div>
       </div>
       <div class="theming-container">
-        <div class="label">Theme</div>
+        <div class="label">{{ 'SIDEBAR.THEME' | translate }}</div>
         <mat-radio-group class="theme-radio-group" aria-label="Select an option" [formControl]="themeControl">
-          <mat-radio-button [color]="'accent'" value="light-theme">Light</mat-radio-button>
-          <mat-radio-button [color]="'primary'" value="dark-theme">Dark</mat-radio-button>
+          <mat-radio-button [color]="'accent'" value="light-theme">{{ 'SIDEBAR.LIGHT' | translate }}</mat-radio-button>
+          <mat-radio-button [color]="'primary'" value="dark-theme">{{ 'SIDEBAR.DARK' | translate }}</mat-radio-button>
         </mat-radio-group>
   </div>
 </div>

@@ -3,8 +3,6 @@
 @mixin landing($light-theme) {
   $primary: map-get($light-theme, primary);
   $accent: map-get($light-theme, accent);
-  $track-color: mat-color($primary);
-  $thumb-color: mat-color($accent);
 
   .swiper-wrapper-container {
       position: relative;

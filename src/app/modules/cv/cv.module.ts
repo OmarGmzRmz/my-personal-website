@@ -8,7 +8,13 @@ import { CvComponent } from './components/cv/cv.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button'
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [CvRootComponent, ResumedCvComponent, CvComponent],
@@ -18,6 +24,14 @@ import { MatButtonModule } from '@angular/material/button'
     MatTabsModule,
     MatIconModule,
     MatButtonModule,
+    HttpClientModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ]
 })
 export class CvModule { }
