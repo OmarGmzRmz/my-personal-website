@@ -121,14 +121,14 @@
         <mat-button-toggle value="email">{{ 'LANDING.EMAIL' | translate }}</mat-button-toggle>
       </mat-button-toggle-group>
       <mat-form-field appearence="outline" [color]="'accent'">
-        <mat-label>{{ 'LANDING.FULL NAME' | translate }}</mat-label>
+        <mat-label>{{ 'LANDING.FULL_NAME' | translate }}</mat-label>
         <input
           matInput
           placeholder="Ex. John Doe"
           formControlName="nameControl"
           required
         />
-        <mat-error *ngIf="contactForm.controls.nameControl.errors && contactForm.controls.nameControl.errors['required']">{{ 'LANDING.FULL NAME IS REQUIRED' | translate }}</mat-error>
+        <mat-error *ngIf="contactForm.controls.nameControl.errors && contactForm.controls.nameControl.errors['required']">{{ 'LANDING.FULL_NAME_IS_REQUIRED' | translate }}</mat-error>
       </mat-form-field>
     </form>
     <form [formGroup]="contactForm">
@@ -144,14 +144,14 @@
         <mat-error *ngIf="contactForm.controls.emailControl.errors && contactForm.controls.emailControl.errors['email']">Must enter a valid email address.</mat-error>
       </mat-form-field>
       <mat-form-field appearence="outline" [color]="'accent'">
-        <mat-label>{{ 'LANDING.LEAVE A MESSAGE' | translate }}</mat-label>
+        <mat-label>{{ 'LANDING.LEAVE_A_MESSAGE' | translate }}</mat-label>
         <textarea 
           matInput 
           placeholder="Ex. It makes me feel..."
           formControlName="messageControl"
           required
         ></textarea>
-        <mat-error *ngIf="contactForm.controls.messageControl.errors && contactForm.controls.messageControl.errors['required']">{{ 'LANDING.A MESSAGE IS REQUIRED' | translate }}</mat-error>
+        <mat-error *ngIf="contactForm.controls.messageControl.errors && contactForm.controls.messageControl.errors['required']">{{ 'LANDING.A_MESSAGE_IS_REQUIRED' | translate }}</mat-error>
         <mat-error *ngIf="contactForm.controls.messageControl.errors && contactForm.controls.messageControl.errors['minlength']">Message requires a minimun length of {{contactForm.controls.messageControl.errors['minlength'].requiredLength}} characters.</mat-error>
       </mat-form-field>
       <button class="send-whatsapp-button" mat-fab type="submit" (click)="submitContactForm()" aria-label="Send WhatsApp">

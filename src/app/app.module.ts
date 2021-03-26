@@ -40,6 +40,7 @@ import { BetterDirectiveDirective } from './directives/better-directive.directiv
 import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -81,6 +82,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatMenuModule,
     MatCardModule,
     MatSidenavModule,
+    MatSelectModule,
     SwiperModule,
     FontAwesomeModule,
     MatDialogModule,

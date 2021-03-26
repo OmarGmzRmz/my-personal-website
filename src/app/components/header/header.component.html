@@ -88,11 +88,18 @@
 
 <!-- #region Menus -->
 <mat-menu #shareMenu="matMenu">
-  <button mat-menu-item>{{ 'HEADER.COPY LINK' | translate }}</button>
-  <button mat-menu-item>{{ 'HEADER.SHARE ON FACEBOOK' | translate }}</button>
-  <button mat-menu-item>{{ 'HEADER.SHARE ON TWITTER' | translate }}</button>
+  <button mat-menu-item>{{ 'HEADER.COPY_LINK' | translate }}</button>
+  <button mat-menu-item>{{ 'HEADER.SHARE_ON_FACEBOOK' | translate }}</button>
+  <button mat-menu-item>{{ 'HEADER.SHARE_ON_TWITTER' | translate }}</button>
 </mat-menu>
 <mat-menu class="settings-menu" #settingsMenu="matMenu">
+  <mat-form-field appearance="fill">
+    <mat-label>Language</mat-label>
+    <mat-select [value]="selectedLanguage" (valueChange)="changeLanguage($event)">
+      <mat-option [value]="'en'">English</mat-option>
+      <mat-option [value]="'es'">Español</mat-option>
+    </mat-select>
+  </mat-form-field>
   <div class="label">{{ 'HEADER.THEME' | translate }}</div>
   <mat-radio-group class="theme-radio-group" aria-label="Select an option" [formControl]="themeControl">
     <mat-radio-button [color]="'accent'" value="light-theme">{{ 'HEADER.LIGHT' | translate }}</mat-radio-button>

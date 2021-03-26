@@ -5,9 +5,9 @@
         "CV": "CV",
         "PROJECTS": "Projects",
         "HOBBIES": "Hobbies",
-        "COPY LINK": "Copy link",
-        "SHARE ON FACEBOOK": "Share on Facebook",
-        "SHARE ON TWITTER": "Share on Twitter",
+        "COPY_LINK": "Copy link",
+        "SHARE_ON_FACEBOOK": "Share on Facebook",
+        "SHARE_ON_TWITTER": "Share on Twitter",
         "THEME": "Theme",
         "LIGHT": "Light",
         "DARK": "Dark"
@@ -21,17 +21,17 @@
         "PROJECTS": "Projects",
         "HOBBIES": "Hobbies",
         "PRIVACY": "Privacy",
-        "TERMS OF USE": "Terms of use",
-        "FOLLOW ME": "Follow me"
+        "TERMS_OF_USE": "Terms of use",
+        "FOLLOW_ME": "Follow me"
     },
     "LANDING": {
         "CONTACT": "Contact",
         "WHATSAPP": "WhatsApp",
         "EMAIL": "Email",
-        "FULL NAME": "Full name",
-        "FULL NAME IS REQUIRED": "Full name is required.",
-        "LEAVE A MESSAGE": "Leave a message",
-        "A MESSAGE IS REQUIRED": "A message is required."
+        "FULL_NAME": "Full name",
+        "FULL_NAME_IS_REQUIRED": "Full name is required.",
+        "LEAVE_A_MESSAGE": "Leave a message",
+        "A_MESSAGE_IS_REQUIRED": "A message is required."
     },
     "SIDEBAR": {
         "HOME": "Home",
@@ -44,7 +44,7 @@
         "DARK": "Dark"
     },
     "ABOUT": {
-        "ABOUT MYSELF": "About myself",
+        "ABOUT_MYSELF": "About myself",
         "PHRASE": "Never be a slave to your past, but an architect of your future.",
         "DESCRIPTION": "Description",
         "BIOGRAPHY": "Biography"
@@ -52,10 +52,10 @@
     "CV": {
         "EXPERIENCE": "Experience",
         "PHRASE": "Make the change that you want to see in the world.",
-        "CURRICULUM VITAE": "Curriculum Vitae",
+        "CURRICULUM_VITAE": "Curriculum Vitae",
         "RESUME": "Resume",
-        "OTHER ACTIVITIES": "Other activities",
-        "CHANGE COLOR": "Change color",
+        "OTHER_ACTIVITIES": "Other activities",
+        "CHANGE_COLOR": "Change color",
         "DOWNLOAD": "Download"
     }
 }

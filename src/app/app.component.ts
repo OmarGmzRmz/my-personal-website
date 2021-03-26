@@ -20,8 +20,12 @@ export class AppComponent implements OnDestroy {
     private translateService: TranslateService
     
   ) {
-    translateService.setDefaultLang('en');
-    translateService.use('en');
+    const defaultLang = 'en';
+    translateService.addLangs(['en', 'es']);
+    translateService.setDefaultLang(defaultLang);
+    const browserLang = translateService.getBrowserLang();
+    const langToUse = browserLang.match(/en|es/) ? browserLang : defaultLang;
+    translateService.use(langToUse);
   }
 
   ngOnInit() {

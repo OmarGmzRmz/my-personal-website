@@ -10,14 +10,7 @@ import { ThemeService } from 'src/app/shared/services/theme.service';
 })
 export class AboutRootComponent implements OnInit {
 
-  constructor(
-    private themeService: ThemeService,
-    private overlayContainer: OverlayContainer,
-    private translateService: TranslateService
-    
-  ) {
-    translateService.setDefaultLang('en');
-    translateService.use('en');
+  constructor( ) {
   }
 
   ngOnInit(): void {

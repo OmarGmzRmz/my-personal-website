@@ -78,6 +78,12 @@ See code sections with tag Scroll indicator bar
 
 ### Ng Feddback
 
+See landing page component
+
+### Ngx Translate
+
+See en.json es.json app.module.ts
+
 ## Other topics
 
 Camel case: myVariable
