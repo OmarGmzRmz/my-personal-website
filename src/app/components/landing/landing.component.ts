@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { ContactService } from 'src/app/services/contact.service';
 import { DialogService } from 'src/app/services/dialog.service';
@@ -126,7 +127,9 @@ isSendEmail = false;//#endregion
 
   constructor(
     private contactService: ContactService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private router: Router,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
@@ -235,5 +238,14 @@ isSendEmail = false;//#endregion
   }
   //Practice
   onInputBlur(event: any) {
+  }
+
+  navigateToFragment(fragment: string): void {
+    console.log('Function call');
+    this.router.navigate([`./`], {
+      fragment: fragment,
+      relativeTo: this.route,
+      replaceUrl: true
+    });
   }
 }
