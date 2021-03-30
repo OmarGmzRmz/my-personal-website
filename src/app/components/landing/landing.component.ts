@@ -240,12 +240,12 @@ isSendEmail = false;//#endregion
   onInputBlur(event: any) {
   }
 
-  navigateToFragment(fragment: string): void {
+  /* navigateToFragment(fragment: string): void {
     console.log('Function call');
     this.router.navigate([`./`], {
       fragment: fragment,
       relativeTo: this.route,
       replaceUrl: true
     });
-  }
+  } */
 }
