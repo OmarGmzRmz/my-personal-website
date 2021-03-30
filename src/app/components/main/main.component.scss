@@ -12,7 +12,7 @@ mat-sidenav-container {
 .router-outlet-container {
     min-height: calc(100vh - 64px - 331px );
     @media screen and (max-width: 600px) {
-        min-height: calc(100vh - 64px - 441px );   
+        min-height: calc(100vh - 64px - 300px);   
     }
 }
 

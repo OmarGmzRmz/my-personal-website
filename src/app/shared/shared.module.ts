@@ -9,11 +9,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { PrivacyDialogComponent } from './components/privacy-dialog/privacy-dialog.component';
 import { TermsDialogComponent } from './components/terms-dialog/terms-dialog.component';
 import { CoolBorderComponent } from './components/cool-border/cool-border.component';
+import { ReadTimePipe } from './pipes/read-time.pipe';
 
 
 
 @NgModule({
-  declarations: [CookiesPolicyDialogComponent , ScrollToTopComponent, PrivacyDialogComponent, TermsDialogComponent, CoolBorderComponent],
+  declarations: [CookiesPolicyDialogComponent , ScrollToTopComponent, PrivacyDialogComponent, TermsDialogComponent, CoolBorderComponent, ReadTimePipe],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -28,7 +29,8 @@ import { CoolBorderComponent } from './components/cool-border/cool-border.compon
     ScrollToTopComponent,
     TermsDialogComponent,
     //practice
-    CoolBorderComponent
+    CoolBorderComponent,
+    ReadTimePipe
   ],
   providers: [
     ThemeService
