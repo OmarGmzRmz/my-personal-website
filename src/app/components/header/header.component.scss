@@ -242,8 +242,13 @@ $header-break: 820px;
   
 ::ng-deep {
   .settings-menu {
+    display: flex;
+    overflow-x: hidden;
     .label {
       padding: 0px 10px;
+    }
+    mat-select {
+      padding: 10px;
     }
     .theme-radio-group {
       display: flex;
@@ -255,4 +260,11 @@ $header-break: 820px;
       }
     }
   }
+  .mat-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  //Theming 
 }
+

@@ -31,7 +31,9 @@
         "FULL_NAME": "Full name",
         "FULL_NAME_IS_REQUIRED": "Full name is required.",
         "LEAVE_A_MESSAGE": "Leave a message",
-        "A_MESSAGE_IS_REQUIRED": "A message is required."
+        "A_MESSAGE_IS_REQUIRED": "A message is required.",
+        "MECHATRONIC": "Mechatronic Engineer",
+        "MECHATRONIC_DESCRIPTION": "Mechatronics, which is also called mechatronics engineering is an interdisciplinary branch of engineering that focuses on the engineering of electronic, electrical and mechanical engineering systems, and also includes a combination of robotics, electronics, computer, telecommunications, systems, control, and product engineering."
     },
     "SIDEBAR": {
         "HOME": "Home",

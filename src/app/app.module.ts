@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatMenuModule} from '@angular/material/menu';
 import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -43,6 +44,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatSelectModule} from '@angular/material/select';
 import { DOCUMENT_PROVIDERS } from './providers/document.provider';
 import { WINDOW_PROVIDERS } from './providers/window.provider';
+import { ClipboardModule} from '@angular/cdk/clipboard';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -73,6 +75,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ClipboardModule,
+    MatProgressBarModule,
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule, 

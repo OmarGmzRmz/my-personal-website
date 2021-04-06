@@ -1,5 +1,5 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, Renderer2 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { pairwise, skip } from 'rxjs/operators';
@@ -17,7 +17,8 @@ export class AppComponent implements OnDestroy {
   constructor(
     private themeService: ThemeService,
     private overlayContainer: OverlayContainer,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private renderer: Renderer2
     
   ) {
     const defaultLang = 'en';
@@ -41,8 +42,9 @@ export class AppComponent implements OnDestroy {
     this.themeService.selectedTheme$.pipe().subscribe((theme: string) => {
       this.theme = theme;
       this.overlayContainer.getContainerElement().classList.add(<string>theme);
+      this.renderer.addClass(document.body, theme);
     });
-
+    
     this.selectedThemesubscription = this.themeService.selectedTheme$.pipe(
       pairwise()
     ).subscribe((theme) => {
@@ -52,6 +54,8 @@ export class AppComponent implements OnDestroy {
       this.theme = current;
       this.overlayContainer.getContainerElement().classList.remove(<string>previous);
       this.overlayContainer.getContainerElement().classList.add(<string>current);
+      this.renderer.removeClass(document.body, previous);
+      this.renderer.addClass(document.body, current);
     });
   }
 

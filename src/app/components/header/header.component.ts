@@ -1,3 +1,4 @@
+import { Clipboard } from '@angular/cdk/clipboard';
 import { isPlatformBrowser } from '@angular/common';
 import { Component, EventEmitter, HostListener, Inject, Input, OnInit, Output, PLATFORM_ID } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
@@ -45,7 +46,10 @@ onLandingPage: boolean = false;
     //#region Scroll to section
     @Inject(PLATFORM_ID) private platformId: any,
     @Inject(WindowRef) private windowRef: WindowRef,
-    @Inject(DocumentRef) private documentRef: DocumentRef
+    @Inject(DocumentRef) private documentRef: DocumentRef,
+    //#endregion
+    //#region Copy to clipboard
+    private clipboard: Clipboard
     //#endregion
   ) {
 
@@ -125,5 +129,21 @@ onLandingPage: boolean = false;
 
   navigateToHomePage() {
     this.router.navigate(['/']);
+  }
+
+  copyLinkToClipboard() {
+    // TODO: Copy actual url. Should fetch this value from environment.ts
+    this.clipboard.copy('192.168.3.12:4204');
+  }
+
+  shareOnFacebook() {
+    const postUrl = encodeURI(document.location.href);
+    window.open(`https://www.facebook.com/sharer.php?u=${postUrl}`);
+  }
+
+  shareOnTwitter() {
+    const postUrl = encodeURI(document.location.href);
+    const text = 'Checkout this awesome website';
+    window.open(`https://www.twitter.com/share?url=${postUrl}&text=${text}`);
   }
 }

@@ -35,5 +35,7 @@
 </mat-card>
   
 <mat-menu #shareMenu="matMenu">
-  <button mat-menu-item>Copy link</button>
+  <button mat-menu-item (click)="copyLinkToClipboard()">Copy link</button>
+  <button mat-menu-item (click)="shareOnFacebook()" >Share on Facebook</button>
+  <button mat-menu-item (click)="shareOnTwitter()">Share on Twitter</button>
 </mat-menu>

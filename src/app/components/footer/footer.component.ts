@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { switchAll } from 'rxjs/operators';
 import { CookiesPolicyDialogComponent } from 'src/app/shared/components/cookies-policy-dialog/cookies-policy-dialog.component';
 import { PrivacyDialogComponent } from 'src/app/shared/components/privacy-dialog/privacy-dialog.component';
+import { TermsDialogComponent } from 'src/app/shared/components/terms-dialog/terms-dialog.component';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { PrivacyDialogComponent } from 'src/app/shared/components/privacy-dialog
 export class FooterComponent implements OnInit {
   nameFooter = 'Omar Eliseo Gómez Ramirez';
   titleFooter = 'Ingeniero Mecatrónico';
-  phoneNumberFooter = '452 525 52 86';
+  phoneNumberFooter = '+52 452 525 52 86';
   emailAddressFooter = 'gomar8138@gmail.com';
   physicalAddressFooter = 'San Felipe de los Herreros, Charapan, Michoacán, 60241';
   public text = 'Omar Gómez Ramírez';
@@ -41,7 +42,13 @@ export class FooterComponent implements OnInit {
           height: '80vh',
           autoFocus: false
         });
-        break
+        break;
+      case 'terms':
+        this.dialog.open(TermsDialogComponent, {
+          height: '80vh',
+          autoFocus: false
+        });
+        break;
     }
   }
 }

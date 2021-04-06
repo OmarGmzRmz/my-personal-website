@@ -104,7 +104,7 @@ body::-webkit-scrollbar-thumb {
   // border: 2px solid #555555;
 }
 
-/* #region Angular Material */
+//#region Angular Material 
 
 // Change Angular Material styles
 
@@ -121,10 +121,22 @@ body::-webkit-scrollbar-thumb {
   // border: 2px solid #555555;
 }
 
-/* #endRegion */
+//#endRegion
 
-/* #region NGFeedback styles */
+// Theming
+body.dark-theme {
+  background-color: black;
+}
+body.dark-theme::-webkit-scrollbar {
+  width: 8px;
+  background-color: #303030;
+}
+body.dark-theme::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #303030;
+}
+body.dark-theme::-webkit-scrollbar-thumb {
+  background-color: #424242;
+  // border: 2px solid #555555;
+}
 
-
-
-/* #endRegion */

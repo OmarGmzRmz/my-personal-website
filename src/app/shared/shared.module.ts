@@ -14,7 +14,7 @@ import { ReadTimePipe } from './pipes/read-time.pipe';
 
 
 @NgModule({
-  declarations: [CookiesPolicyDialogComponent , ScrollToTopComponent, PrivacyDialogComponent, TermsDialogComponent, CoolBorderComponent, ReadTimePipe],
+  declarations: [CookiesPolicyDialogComponent , ScrollToTopComponent, PrivacyDialogComponent, TermsDialogComponent, CoolBorderComponent, ReadTimePipe, TermsDialogComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -23,7 +23,8 @@ import { ReadTimePipe } from './pipes/read-time.pipe';
   ],
   entryComponents: [
     CookiesPolicyDialogComponent,
-    PrivacyDialogComponent
+    PrivacyDialogComponent,
+    TermsDialogComponent
   ], 
   exports: [
     ScrollToTopComponent,

@@ -84,6 +84,8 @@ See landing page component
 
 See en.json es.json app.module.ts
 
+### Scroll to section
+
 ## Other topics
 
 Camel case: myVariable
