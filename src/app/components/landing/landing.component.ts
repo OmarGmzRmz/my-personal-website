@@ -36,7 +36,7 @@ export class LandingComponent implements OnInit {
   showElement2 = false;
   showElement3 = false;
 
-/* #region  Particles */
+//  #region  Particles
   id = 'tsparticles';
   particlesOptions = {
     "interactivity": {
@@ -103,7 +103,7 @@ export class LandingComponent implements OnInit {
       }
     }
   }
-/* #endregion */
+// #endregion 
 
 //#region Contact form
 contactForm = new FormGroup({
@@ -125,6 +125,23 @@ isSendEmail = false;//#endregion
 @ViewChild('myInput1', {static: true}) myNumericInput1: ElementRef | undefined;
 @ViewChild('myInput2', {static: true}) myNumericInput2: ElementRef | undefined;
 
+//#region Skills
+skills = [
+  {name: 'Javascript/Typescrip', completion: 50, label: 'Intermediate'},
+  {name: 'HTML/CSS', completion: 40, label: 'Intermediate'},
+  {name: 'C', completion: 50, label: 'Intermediate'},
+  {name: 'C++', completion: 40, label: 'Intermediate'},
+  {name: 'NodeJS', completion: 40, label: 'Intermediate'},
+  {name: 'MongoDB', completion: 20, label: 'Begginer'},
+  {name: 'Git', completion: 45, label: 'Intermediate'},
+  {name: 'MatLab', completion: 35, label: 'Begginer'},
+  {name: 'AutoCad', completion: 50, label: 'Intermediate'},
+  {name: 'Excel', completion: 40, label: 'Intermediate'},
+  {name: 'Proteus', completion: 70, label: 'Experienced'},
+  {name: 'Azure', completion: 10, label: 'Begginer'}
+];
+//#region 
+
   constructor(
     private contactService: ContactService,
     private dialogService: DialogService,
@@ -133,6 +150,12 @@ isSendEmail = false;//#endregion
     ) { }
 
   ngOnInit(): void {
+
+//#region Skills
+this.skills = this.skills.sort((a, b) => b.completion - a.completion);
+//#endregion
+
+//#region 
     const options0: TypedOptions = {
       strings: [
         'Welcome to my personal website'
@@ -171,9 +194,9 @@ isSendEmail = false;//#endregion
         this.typed = new Typed('.typed-element-2', options2);
       }, 1);
     }, 4000);
-    //#endregion
+//#endregion
 
-    //#region  Contact Form
+  //#region  Contact Form
     this.contactForm.controls.toggleControl.valueChanges.subscribe((value: string) => {
       switch (value) {
         case 'whatsapp':
@@ -188,7 +211,9 @@ isSendEmail = false;//#endregion
       }
     });
   }
+  //#endregion
   //#region Contact Form
+
   submitContactForm() {
     if (!this.isSendEmail) {
       // Send WhatsApp

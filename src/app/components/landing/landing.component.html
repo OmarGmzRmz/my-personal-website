@@ -113,6 +113,25 @@
   </div>
 </section>
 
+<section id="skills" class="skills-section">
+  <div class="skills-container">
+    <h3 class="section-title">Skills</h3>
+    <mat-card>
+      <div class="skill-container" *ngFor="let skill of skills">
+        <div class="skill-top-row">
+          <div>{{skill.name}}</div>
+          <div class="center-label">{{skill.label}}</div>
+          <div class="completion">{{skill.completion / 100 | percent }}</div>
+        </div>
+        <mat-progress-bar mode="buffer" value="{{skill.completion}}"></mat-progress-bar>
+        <div class="skill-bottom-row">
+          <div class="center-label">{{skill.label}}</div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</section>
+
 <section id="contact" class="contact-section">
   <div class="contact-container">
     <div class="section-title" >{{ 'LANDING.CONTACT' | translate }}</div>
