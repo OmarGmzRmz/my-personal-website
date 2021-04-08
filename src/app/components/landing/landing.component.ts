@@ -134,7 +134,7 @@ skills = [
   {name: 'NodeJS', completion: 40, label: 'Intermediate'},
   {name: 'MongoDB', completion: 20, label: 'Begginer'},
   {name: 'Git', completion: 45, label: 'Intermediate'},
-  {name: 'MatLab', completion: 35, label: 'Begginer'},
+  {name: 'MATLAB', completion: 35, label: 'Begginer'},
   {name: 'AutoCad', completion: 40, label: 'Intermediate'},
   {name: 'Microsoft Excel', completion: 40, label: 'Intermediate'},
   {name: 'Proteus', completion: 50, label: 'Intermediate'},
