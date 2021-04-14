@@ -17,7 +17,7 @@
     </mat-sidenav-content>
 </mat-sidenav-container>
 
-<button mat-raised-button class="feedback-button" color="accent" feedback (send)="onSendFeedback($event)">feedback</button>
+<button mat-raised-button class="feedback-button" color="accent" feedback (click)="deactivateSmothScrolling()" (send)="onSendFeedback($event)">feedback</button>
 
 <app-scroll-to-top></app-scroll-to-top>
 

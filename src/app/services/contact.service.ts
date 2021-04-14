@@ -35,3 +35,4 @@ sendFeedback(description: string, screenshot: string): Observable<boolean> {
 }
 
 }
+
