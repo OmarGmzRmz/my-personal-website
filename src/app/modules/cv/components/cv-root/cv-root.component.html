@@ -4,7 +4,10 @@
       <div class="elements-container">
         <h1>{{ 'CV.EXPERIENCE' | translate }}</h1>
         <h5>{{ 'CV.PHRASE' | translate }}</h5>
-        <button>Call action</button>
+        <button (click)="downloadResumeZip()" class="download-resumes-button">
+          Free download
+          <mat-icon class="download-icon">download</mat-icon>
+        </button>
       </div>
     </div>
   </div>
@@ -80,7 +83,10 @@
               <div tabindex="0" class="control gray focus-outline" (click)="changeLeftPanelStyle('gray')"></div>
             </div>
           </div>
-          <button mat-raised-button color="primary" (click)="downloadResume()">Download</button>
+          <button (click)="downloadResumeZip()" class="download-resumes-button">
+            Free download
+            <mat-icon class="download-icon">download</mat-icon>
+          </button>
         </div>
       </div>
     </div>
@@ -155,7 +161,10 @@
               <div tabindex="0" class="control gray focus-outline" (click)="changeLeftPanelStyle('gray')"></div>
             </div>
           </div>
-          <button mat-raised-button color="primary" (click)="downloadResume()">Download</button>
+          <button (click)="downloadResumeZip()" class="download-resumes-button">
+            Free download
+            <mat-icon class="download-icon">download</mat-icon>
+          </button>
         </div>
       </div>
     </div>

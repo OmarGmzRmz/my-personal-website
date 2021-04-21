@@ -1,5 +1,6 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import * as html2canvas from 'html2canvas';
 import * as moment from 'moment';
@@ -54,7 +55,9 @@ export class CvRootComponent implements OnInit {
   }
 ];
 
-constructor( ) {
+constructor(
+  @Inject(DOCUMENT) private document: any
+ ) {
 }
 
   ngOnInit(): void {
@@ -78,6 +81,7 @@ constructor( ) {
   }
 
   async downloadResume() {
+    this.document.getElementById('html-element').style.scrollBehavior = 'unset';
     window.scrollTo(0, 0);
     setTimeout(async () => {
       let element: HTMLElement;
@@ -91,4 +95,9 @@ constructor( ) {
       download.click();
     }, 1);
   }
+
+async downloadResumeZip() {
+  window.open(`/assets/SimExpandPalabraYCapacidad.zip`);
+}
+
 }
