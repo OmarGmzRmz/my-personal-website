@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { ContactService } from 'src/app/services/contact.service';
@@ -28,13 +28,14 @@ export class LandingComponent implements OnInit {
       clickable: true
     },
   };
-  ////#endregion
+  //#endregion
 
-  // Typed
+  //#region TypedJs
   typed: any;
   showElement1 = false;
   showElement2 = false;
   showElement3 = false;
+  //#endregion
 
 //  #region  Particles
   id = 'tsparticles';
@@ -110,20 +111,22 @@ contactForm = new FormGroup({
   toggleControl: new FormControl('whatsapp', [Validators.required]),
   nameControl: new FormControl('', [Validators.required]),
   emailControl: new FormControl('', [Validators.email, (control: AbstractControl): {[key: string]: any} | null => {
-    const regularExpression = /(?:[a-z0-9!#$%&'+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'+/=?^_`{|}~-]+)|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])")@(?:(?:[a-z0-9](?:[a-z0-9-][a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-][a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
-    const match =regularExpression.test(control.value);
+    const regularExpresion = /(?:[a-z0-9!#$%&'+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'+/=?^_`{|}~-]+)|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])")@(?:(?:[a-z0-9](?:[a-z0-9-][a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-][a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+    const match = regularExpresion.test(control.value);
     if (!match) {
-      return {noMatchRegex: { errorMessage: 'Must enter a valid email address.'}}
+      return { noMatchRegex: { errorMessage: 'Must enter a valid email address.' } };
     }
     return null;
   }]),
   messageControl: new FormControl('', [Validators.required, Validators.minLength(10)])
 });
-isSendEmail = false;//#endregion
+isSendEmail = false;
+//#endregion
 
-//  Practice
+//#region Practice
 @ViewChild('myInput1', {static: true}) myNumericInput1: ElementRef | undefined;
 @ViewChild('myInput2', {static: true}) myNumericInput2: ElementRef | undefined;
+//#endregion
 
 //#region Skills
 skills = [
@@ -140,7 +143,7 @@ skills = [
   {name: 'Proteus', completion: 50, label: 'Intermediate'},
   {name: 'Azure', completion: 10, label: 'Begginer'}
 ];
-//#region 
+//#endregion 
 
   constructor(
     private contactService: ContactService,
@@ -212,8 +215,8 @@ this.skills = this.skills.sort((a, b) => b.completion - a.completion);
     });
   }
   //#endregion
-  //#region Contact Form
 
+  //#region Contact Form
   submitContactForm() {
     if (!this.isSendEmail) {
       // Send WhatsApp
@@ -243,10 +246,18 @@ this.skills = this.skills.sort((a, b) => b.completion - a.completion);
         const name = this.contactForm.controls.nameControl.value;
         const email = this.contactForm.controls.emailControl.value;
         const message = this.contactForm.controls.messageControl.value;
-        this.contactService.sendEmail(name, email, message);
-        // TODO: Call email serivce
+        this.contactService.sendEmail(name, email, message).subscribe((response) => {
+          const msg = 'Thank you for your message.';
+          const options = ['Ok'];
+          this.contactForm.reset();
+          this.contactForm.controls.toggleControl.setValue('email');
+          Object.keys(this.contactForm.controls).forEach((key) =>{
+            this.contactForm.controls[`${key}`].setErrors(null);
+          });
+          this.dialogService.openDialog(msg, []).subscribe((result: string) => {});
+        });
       } else {
-        const message = 'Submitted form is valid';
+        const message = 'Submitted form is invalid';
         const options = ['Ok'];
         this.dialogService.openDialog(message, options).subscribe((result: string) => {
 

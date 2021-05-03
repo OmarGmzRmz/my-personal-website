@@ -16,11 +16,11 @@ export class ContactService {
 
   sendEmail(name: string, email: string, message: string): Observable<string> {
     this.loaderService.show();
-    const url = `https://eklp4v8rx7.execute-api.us-east-2.amazonaws.com/default/SendFeedbackFromPersonalWebsite`;
+    const url = 'https://eklp4v8rx7.execute-api.us-east-2.amazonaws.com/default/SendEmailFromPersonalWebsiteMessage';
     const infoFromSenderDTO = {
-      "SenderName": name,
-      "SenderEmailAddress": email,
-      "SenderMessage": message
+      "name": name,
+      "email": email,
+      "message": message
     };
     return this.http.post<any>(url, infoFromSenderDTO).pipe(
       tap(()=> {
