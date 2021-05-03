@@ -7,12 +7,12 @@ import { ResumedCvComponent } from './components/resumed-cv/resumed-cv.component
 const routes: Routes = [
   { 
   path: '', component:
-  CvRootComponent,
+  CvRootComponent/* ,
   children: [
      { path: '', redirectTo: 'description', pathMatch: 'full' },
      { path: 'cv', component: CvComponent },
      { path: 'resumed-cv', component: ResumedCvComponent }
-    ] 
+    ]  */
   }
 ];
 
