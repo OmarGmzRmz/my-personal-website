@@ -57,6 +57,7 @@ export class ProjectsService {
     private loaderService: LoaderService
   ) { }
 
+  
   getProjectsYears(): Observable<ProjectsYear[]>   {
     this.loaderService.show();
     return new Observable(obs => {
@@ -90,6 +91,15 @@ export class ProjectsService {
         obs.complete();
         this.loaderService.hide();
       }, 3000);
+    });
+  }
+
+  getTotalProjects(): Observable<number> {
+    return new Observable(obs => {
+      setTimeout(() => {
+        obs.next(16);
+        obs.complete();
+      }, 5000);
     });
   }
 }

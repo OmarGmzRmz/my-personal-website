@@ -5,6 +5,7 @@ import { RouterState, StoreRouterConnectingModule } from "@ngrx/router-store";
 import { StoreModule } from "@ngrx/store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { environment } from "src/environments/environment";
+import { ProjectsStoreModule } from "./projects/projects.store.module";
 import { metaReducers } from './root-reducers';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { metaReducers } from './root-reducers';
             maxAge: 25, // Retains the lasts 25 states
             logOnly: environment.production, // Restrict NgRx Dev Tools Extension functionaliity when running the app in production mood
         }),
-        EffectsModule.forRoot()
+        EffectsModule.forRoot([]),
+        ProjectsStoreModule
     ]
 })
 export class RootStoreModule {}

@@ -1,16 +1,43 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { exhaustMap } from "rxjs/operators";
+import { of } from "rxjs";
+import { catchError, exhaustMap, map } from "rxjs/operators";
 import { ProjectsService } from "src/app/modules/projects/services/projects.service";
-import { getTotalProjects } from './projects.actions';
+import { ProjectsYear } from "src/app/modules/projects/services/view-models/projects-year.interface";
+import { getProjectYears, getProjectYearsFailure, getProjectYearsSuccess, getTotalProjects, getTotalProjectsFailure, getTotalProjectsSuccess } from './projects.actions';
+
 
 @Injectable()
 export class ProjectsEffects {
-    /* getTotalProjectsEffect$ = createEffect(() => this.actions$.pipe(
+    
+    getTotalProjectsEffect$ = createEffect(() => this.actions$.pipe(
         ofType(getTotalProjects),
-        exhaustMap((action) => this.pro)
+        exhaustMap((action) => this.projectsService.getTotalProjects().pipe(
+            map((totalProjects: number) => {
+                return getTotalProjectsSuccess({totalProjects})
+            }),
+            catchError((error) => {
+                return of(
+                    getTotalProjectsFailure
+                )
+            })
+        ))
     ));
- */
+
+    getProjectYearsEffect$ = createEffect(() => this.actions$.pipe(
+        ofType(getProjectYears),
+        exhaustMap((action) => this.projectsService.getProjectsYears().pipe(
+            map((projectYears: ProjectsYear[]) => {
+                return getProjectYearsSuccess({projectYears});
+            }),
+            catchError((error) => {
+                return of(
+                    getProjectYearsFailure
+                );
+            })
+        ))
+    ));
+
     constructor (
         private actions$: Actions,
         private projectsService: ProjectsService

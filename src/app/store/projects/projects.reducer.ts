@@ -1,19 +1,32 @@
 import { Action, createReducer, on } from "@ngrx/store";
-import { initialsProjectsState, ProjectsState } from "./projects.state";
+import { initialProjectsState, ProjectsState } from "./projects.state";
 import * as ProjectsActions from './projects.actions';
+import { ProjectsYear } from "src/app/modules/projects/services/view-models/projects-year.interface";
 
 export const projectsFeatureKey = 'projects';
 
 const projectsReducer  = createReducer(
-    initialsProjectsState,
-    on(ProjectsActions.getTotalProjectsSuccess, (state: ProjectsState, payload: { totalProjects: number }) => {
-        return {
+    initialProjectsState,
+    on(
+        ProjectsActions.getTotalProjectsSuccess,
+        (state: ProjectsState, payload: { totalProjects: number }) => {
+            return {
+                ...state,
+                totalProjects: payload.totalProjects
+            };
+        }
+    ),
+    on(
+        ProjectsActions.getProjectYearsSuccess,
+        (state: ProjectsState, payload: { projectYears: ProjectsYear[] }) => {
+          return {
             ...state,
-            totalProjects: payload.totalProjects
-        };
-    })
+            projectYears: payload.projectYears
+          };
+        }
+    )
 );
-
+    
 export function reducer(state: ProjectsState | undefined, action: Action) {
     return projectsReducer(state, action);
-}
+  }

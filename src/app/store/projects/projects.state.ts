@@ -1,7 +1,11 @@
+import { ProjectsYear } from "src/app/modules/projects/services/view-models/projects-year.interface";
+
 export interface ProjectsState {
-    totalProjects: number;
+  totalProjects: number;
+  projectYears: ProjectsYear[];
 }
 
-export const initialsProjectsState: ProjectsState = {
-    totalProjects: 0
+export const initialProjectsState: ProjectsState = {
+  totalProjects: 0,
+  projectYears: []
 };
