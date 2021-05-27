@@ -6,7 +6,6 @@ import { ProjectsService } from "src/app/modules/projects/services/projects.serv
 import { ProjectsYear } from "src/app/modules/projects/services/view-models/projects-year.interface";
 import { getProjectYears, getProjectYearsFailure, getProjectYearsSuccess, getTotalProjects, getTotalProjectsFailure, getTotalProjectsSuccess } from './projects.actions';
 
-
 @Injectable()
 export class ProjectsEffects {
     
@@ -19,7 +18,7 @@ export class ProjectsEffects {
             catchError((error) => {
                 return of(
                     getTotalProjectsFailure
-                )
+                );
             })
         ))
     ));
