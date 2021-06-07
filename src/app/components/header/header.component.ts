@@ -3,12 +3,15 @@ import { isPlatformBrowser } from '@angular/common';
 import { Component, EventEmitter, HostListener, Inject, Input, OnInit, Output, PLATFORM_ID } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { fromEvent, of } from 'rxjs';
 import { map, pairwise, skip, switchMap, throttleTime } from 'rxjs/operators';
 import { DocumentRef } from 'src/app/providers/document.provider';
 import { WindowRef } from 'src/app/providers/window.provider';
 import { ThemeService } from 'src/app/shared/services/theme.service';
+import { selectDataState } from 'src/app/store/data/data.selectors';
+import { DataState } from 'src/app/store/data/data.state';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +19,7 @@ import { ThemeService } from 'src/app/shared/services/theme.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public name = 'Omar Gomez Ramirez';
+  public name: string = '';
   public title = 'Ing. Mecatrónico';
   public enableShareButton = true;
   @Input() initials: string | undefined;
@@ -49,8 +52,9 @@ onLandingPage: boolean = false;
     @Inject(DocumentRef) private documentRef: DocumentRef,
     //#endregion
     //#region Copy to clipboard
-    private clipboard: Clipboard
+    private clipboard: Clipboard,
     //#endregion
+    private dataStore: Store<DataState>
   ) {
 
     // Code executes on component initialization
@@ -120,6 +124,10 @@ onLandingPage: boolean = false;
         });
     }
     //#endregion
+
+    this.dataStore.select(selectDataState).subscribe((dataState: DataState) => {
+      this.name = dataState.name;
+    });
   }
 
   changeLanguage(language: string): void {
