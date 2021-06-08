@@ -1,9 +1,12 @@
 import { Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 import { switchAll } from 'rxjs/operators';
 import { CookiesPolicyDialogComponent } from 'src/app/shared/components/cookies-policy-dialog/cookies-policy-dialog.component';
 import { PrivacyDialogComponent } from 'src/app/shared/components/privacy-dialog/privacy-dialog.component';
 import { TermsDialogComponent } from 'src/app/shared/components/terms-dialog/terms-dialog.component';
+import { selectDataState } from 'src/app/store/data/data.selectors';
+import { DataState } from 'src/app/store/data/data.state';
 
 
 @Component({
@@ -12,16 +15,39 @@ import { TermsDialogComponent } from 'src/app/shared/components/terms-dialog/ter
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  nameFooter = 'Omar Eliseo Gómez Ramirez';
-  titleFooter = 'Ingeniero Mecatrónico';
-  phoneNumberFooter = '+52 452 525 52 86';
-  emailAddressFooter = 'gomar8138@gmail.com';
-  physicalAddressFooter = 'San Felipe de los Herreros, Charapan, Michoacán, 60241';
-  public text = 'Omar Gómez Ramírez';
+  nameFooter: string = '';
+  titleFooter: string = '';
+  phoneNumberFooter: string = '';
+  emailAddressFooter:string = '';
+  physicalAddressFooter: string = '';
+  public text: string = '';
   showInfo: any;
-  constructor( public dialog: MatDialog) { }
+  constructor( 
+    public dialog: MatDialog,
+    private dataStore: Store<DataState>
+    ) { }
 
   ngOnInit(): void {
+    //#region Data State
+    this.dataStore.select(selectDataState).subscribe((dataState: DataState) => {
+      this.nameFooter = dataState.name;
+    });
+    this.dataStore.select(selectDataState).subscribe((dataState: DataState) => {
+      this.phoneNumberFooter = dataState.phoneNumber;
+    });
+    this.dataStore.select(selectDataState).subscribe((dataState: DataState) => {
+      this.emailAddressFooter = dataState.email;
+    });
+    this.dataStore.select(selectDataState).subscribe((dataState: DataState) => {
+      this.physicalAddressFooter = dataState.address;
+    });
+    this.dataStore.select(selectDataState).subscribe((dataState: DataState) => {
+      this.titleFooter = dataState.job;
+    });
+    this.dataStore.select(selectDataState).subscribe((dataState: DataState) => {
+      this.text = dataState.name;
+    });
+    //#endregion
   }
   onShowInfo(info: string): void {
     alert(info);

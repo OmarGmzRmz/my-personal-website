@@ -20,7 +20,7 @@ import { DataState } from 'src/app/store/data/data.state';
 })
 export class HeaderComponent implements OnInit {
   public name: string = '';
-  public title = 'Ing. Mecatrónico';
+  public title: string = '';
   public enableShareButton = true;
   @Input() initials: string | undefined;
   @Output() toggleSidenav: EventEmitter<void> = new EventEmitter();
@@ -127,6 +127,9 @@ onLandingPage: boolean = false;
 
     this.dataStore.select(selectDataState).subscribe((dataState: DataState) => {
       this.name = dataState.name;
+    });
+    this.dataStore.select(selectDataState).subscribe((dataState: DataState) => {
+      this.title = dataState.job;
     });
   }
 

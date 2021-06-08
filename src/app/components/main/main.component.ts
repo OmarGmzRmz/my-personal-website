@@ -1,7 +1,10 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { ContactService } from 'src/app/services/contact.service';
 import { DialogService } from 'src/app/services/dialog.service';
+import { selectDataState } from 'src/app/store/data/data.selectors';
+import { DataState } from 'src/app/store/data/data.state';
 
 @Component({
   selector: 'app-main',
@@ -10,15 +13,19 @@ import { DialogService } from 'src/app/services/dialog.service';
 })
 export class MainComponent implements OnInit {
   opened: boolean | undefined;
-  initials = 'O E G R';
+  initials: string = '';
 
   constructor(
     @Inject(DOCUMENT) private document: any,
     private contactService: ContactService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private dataStore: Store<DataState>
   ) { }
 
   ngOnInit(): void {
+    this.dataStore.select(selectDataState).subscribe((dataState: DataState) => {
+      this.initials = dataState.initials;
+    });
   }
 
   onOpenedStart(): void{

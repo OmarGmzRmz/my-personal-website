@@ -63,8 +63,8 @@
                 }
                 .container {
                   font-family: Monaco, Consolas, "Lucida Console", monospace;
-                  background-color: black;
-                  color: white;
+                  background-color: #FFFFFF99;
+                  color:black;
                   min-height: 200px;
                   padding: 10px 60px 10px 10px;
                   border-bottom-right-radius: 5px;
@@ -107,7 +107,7 @@
           .circuit-silde {
             overflow: hidden;
             position: relative;
-            background-image: url(/assets/images/jumbotrons/transistor.jpeg);
+            background-image: url(/assets/images/jumbotrons/integrated.jpg);
             background-size: cover; 
             resize: both;
             background-position-x: center;
