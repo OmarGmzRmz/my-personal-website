@@ -59,6 +59,8 @@ export class CvRootComponent implements OnInit {
   }
 ];
 
+pdfSrc = 'assets/prueba.pdf';
+
 constructor(
   @Inject(DOCUMENT) private document: any,
   private router: Router,
