@@ -107,7 +107,7 @@
           .circuit-silde {
             overflow: hidden;
             position: relative;
-            background-image: url(/assets/images/jumbotrons/integrated.jpg);
+            background-image: url('/assets/images/jumbotrons/arduino.jpg');
             background-size: cover; 
             resize: both;
             background-position-x: center;
@@ -124,7 +124,7 @@
                 float: right;
                 position: absolute;
                 top: 0px;
-                color: #8266ff;
+                color: black;
                 cursor: pointer;
                 text-decoration: none;
                 &:hover {

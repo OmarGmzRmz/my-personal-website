@@ -45,6 +45,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { DOCUMENT_PROVIDERS } from './providers/document.provider';
 import { WINDOW_PROVIDERS } from './providers/window.provider';
 import { ClipboardModule} from '@angular/cdk/clipboard';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -103,7 +104,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    PdfViewerModule
   ],
   providers: [{
     provide: SWIPER_CONFIG,

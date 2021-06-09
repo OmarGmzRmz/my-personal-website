@@ -12,6 +12,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -33,7 +34,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    PdfViewerModule
+    PdfViewerModule,
+    NgxChartsModule
   ]
 })
 export class CvModule { }

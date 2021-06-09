@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import * as html2canvas from 'html2canvas';
 import * as moment from 'moment';
 import { Subscription } from 'rxjs';
-import { ThemeService } from 'src/app/shared/services/theme.service';
+import { single } from './data';
 
 @Component({
   selector: 'app-cv-root',
@@ -61,6 +61,22 @@ export class CvRootComponent implements OnInit {
 
 pdfSrc = 'assets/prueba.pdf';
 
+//#region My Time chart
+single = [];
+view: any = [700, 200];
+// view = undefined;
+
+// options
+gradient: boolean = true;
+showLegend: boolean = true;
+showLabels: boolean = true;
+isDoughnut: boolean = false;
+
+colorScheme = {
+  domain: ['#00008B', '#0000FF', '#4169E1', '#00BFFF', '#87CEEB', '#E0FFFF']
+};
+//#endregion
+
 constructor(
   @Inject(DOCUMENT) private document: any,
   private router: Router,
@@ -96,7 +112,12 @@ constructor(
        }
      }
    });
+
+   // My Time Chart
+   Object.assign(this, { single });
   }
+
+  
 
   ngOnInit(): void {
   }

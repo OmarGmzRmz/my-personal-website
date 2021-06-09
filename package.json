@@ -28,6 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
+    "@swimlane/ngx-charts": "^18.0.1",
     "html2canvas": "^1.0.0-rc.5",
     "moment": "^2.29.1",
     "ng-particles": "^2.1.12",
