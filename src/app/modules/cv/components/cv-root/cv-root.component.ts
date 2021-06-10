@@ -2,7 +2,6 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import * as html2canvas from 'html2canvas';
 import * as moment from 'moment';
 import { Subscription } from 'rxjs';
@@ -167,5 +166,19 @@ constructor(
 async downloadResumeZip() {
   window.open(`/assets/SimExpandPalabraYCapacidad.zip`);
 }
+
+//#region My Time
+onSelect(data: any): void {
+  console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+}
+
+onActivate(data: any): void {
+  console.log('Activate', JSON.parse(JSON.stringify(data)));
+}
+
+onDeactivate(data: any): void {
+  console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+}
+//#endregion
 
 }
