@@ -4,6 +4,28 @@
   $primary: map-get($light-theme, primary);
   $accent: map-get($light-theme, accent);
 
+  .landing-button {
+    $normal-color: #89c402;
+    margin-top: 24px;
+    background-color: $normal-color;
+    border: 1px solid $normal-color;
+    border-radius: 4px;
+    color: #1a1a1f;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 16px;
+    line-height: 1;
+    font-family: inherit;
+    cursor: pointer;
+    &:hover {
+      $hover-color: #9bdd02;
+      background-color: $hover-color;
+      border: 1px solid $hover-color;
+      text-decoration: underline;
+    }
+  }
+
   .swiper-wrapper-container {
       position: relative;
       .swiper-container {
@@ -63,8 +85,8 @@
                 }
                 .container {
                   font-family: Monaco, Consolas, "Lucida Console", monospace;
-                  background-color: #FFFFFF99;
-                  color: black;
+                  background-color: rgba(0,0,0,.7686274509803922);
+                  color: white;
                   min-height: 200px;
                   padding: 10px 60px 10px 10px;
                   border-bottom-right-radius: 5px;
@@ -330,7 +352,21 @@
         }
       }
     }
-
+    .coffee-section {
+      .coffee-container {
+        max-width: 725px;
+        margin: auto;
+        padding: 60px 16px;
+        mat-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          button {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
   .contact-section {
     .contact-container {
       max-width: 1280px;
@@ -363,6 +399,9 @@
     &::after {
       background-color: #9574CA !important;
     }
+  }
+  .icon-box {
+    background: radial-gradient(circle, #8bffb3 0%, rgba(209, 209, 223, 0) 50%, rgba(255, 255, 255, 0) 74%);
   }
 }
 
