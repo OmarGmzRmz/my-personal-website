@@ -9,6 +9,9 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { NgParticlesModule } from 'ng-particles';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -20,6 +23,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     CommonModule,
     AboutRoutingModule,
     HttpClientModule,
+    NgParticlesModule,
+    MatToolbarModule,
+    MatIconModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

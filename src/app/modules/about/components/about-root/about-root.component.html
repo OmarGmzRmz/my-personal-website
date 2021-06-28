@@ -1,16 +1,26 @@
-<section class="about-jumbotron">
+<div class="about-jumbotron">
     <div class="jumbotron-container">
-        <div class="jumbotron-overlay">
-            <div class="elements-container">
-                <h1>{{ 'ABOUT.ABOUT_MYSELF' | translate }}</h1>
-                <h5>{{ 'ABOUT.PHRASE' | translate }}</h5>
-                <button>Call action</button>
-            </div>
+      <div style="z-index: 1; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+        <h1 class="title">About me</h1>
+        <div class="phrase">
+          “At least you try, other people never try.”
         </div>
+        <button mat-flat-button [routerLink]="['/home']" fragment="contact">Get in touch</button>
+      </div>
     </div>
-</section>
+  </div>
+
+
 <div class="tabs-navigation-container">
-    <a class="tab-selector" routerLink="active" [routerLink]="['./description']">{{ 'ABOUT.DESCRIPTION' | translate }}</a>
-    <a class="tab-selector" routerLink="active" [routerLink]="['./biography']">{{ 'ABOUT.BIOGRAPHY' | translate }}</a>
-</div>
-<router-outlet></router-outlet>
+    <div class="tab focus-outline" routerLinkActive="active" [routerLink]="['./description']">
+      <mat-icon>contact_page</mat-icon>
+      <div>Description</div>
+    </div>
+    <div class="tab focus-outline" routerLinkActive="active" [routerLink]="['./biography']">
+      <mat-icon>auto_stories</mat-icon>
+      <div>Biography</div>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>
+
