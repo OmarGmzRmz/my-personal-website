@@ -10,11 +10,24 @@ import { PrivacyDialogComponent } from './components/privacy-dialog/privacy-dial
 import { TermsDialogComponent } from './components/terms-dialog/terms-dialog.component';
 import { CoolBorderComponent } from './components/cool-border/cool-border.component';
 import { ReadTimePipe } from './pipes/read-time.pipe';
+import { CreditCardNumberPipe } from './pipes/credit-card-number.pipe';
+import { ReversePipe } from './pipes/reverse.pipe';
 
 
 
 @NgModule({
-  declarations: [CookiesPolicyDialogComponent , ScrollToTopComponent, PrivacyDialogComponent, TermsDialogComponent, CoolBorderComponent, ReadTimePipe, TermsDialogComponent],
+  declarations: [
+    CookiesPolicyDialogComponent,
+    ScrollToTopComponent,
+    PrivacyDialogComponent,
+    TermsDialogComponent,
+    CoolBorderComponent,
+    ReadTimePipe,
+    TermsDialogComponent,
+    ReadTimePipe,
+    CreditCardNumberPipe,
+    ReversePipe
+  ],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -31,7 +44,9 @@ import { ReadTimePipe } from './pipes/read-time.pipe';
     TermsDialogComponent,
     //practice
     CoolBorderComponent,
-    ReadTimePipe
+    ReadTimePipe,
+    CreditCardNumberPipe,
+    ReversePipe
   ],
   providers: [
     ThemeService

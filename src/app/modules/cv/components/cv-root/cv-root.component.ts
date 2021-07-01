@@ -58,7 +58,7 @@ export class CvRootComponent implements OnInit {
   }
 ];
 
-pdfSrc = 'assets/prueba.pdf';
+pdfSrc = 'assets/OMAR ELISEO GOMEZ RAMIREZ.pdf';
 
 //#region My Time chart
 single = [];
@@ -164,7 +164,7 @@ constructor(
   }
 
 async downloadResumeZip() {
-  window.open(`/assets/SimExpandPalabraYCapacidad.zip`);
+  window.open(`/assets/OMAR ELISEO GOMEZ RAMIREZ.zip`);
 }
 
 //#region My Time

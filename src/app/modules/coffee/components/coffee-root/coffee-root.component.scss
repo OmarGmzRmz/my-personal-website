@@ -1,0 +1,159 @@
+.download-resumes-button {
+	margin-top: 24px;
+	background-color: #d59dff;
+	border: 1px solid #d59dff;
+	color: #1a1a1f;
+	font-weight: 600!important;
+	font-size: 1.125rem!important;
+	line-height: 1.333!important;
+	padding: 8px 10px;
+	border-radius: 2px;
+	align-items: center;
+	text-align: left;
+	display: inline-flex;
+	vertical-align: bottom;
+	font-family: inherit;
+	cursor: pointer;
+	.download-icon {
+	  margin-left: 20px;
+	  font-weight: 100;
+	}
+	&:hover {
+	  background-color: #e1bdfc;
+	  border: 1px solid #e1bdfc;
+	}
+  }
+  
+  .about-jumbotron {
+	.jumbotron-container {
+	  background-image: url('/assets/images/jumbotrons/contributions.png');
+	  background-size: contain;
+	  .jumbotron-overlay {
+		background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 20%, rgba(0, 0, 0, 0) 100%);
+		.elements-container {
+		  max-width: 1280px;
+		  margin: auto;
+		  color: white;
+		  padding: 36px 16px;
+		  h1 {
+			font-size: 46px;
+			font-weight: bold;
+			line-height: 120%;
+			padding: 0px;
+		  }
+		  h5 {
+			margin: 10px 0px;
+			font-size: 24px;
+			padding-bottom: 4px;
+			line-height: 120%;
+		  }
+		}
+	  }
+	}
+  }
+
+  .welcome-banner {
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    background-color: gainsboro;
+    color: dimgray;
+    text-align: center;
+  }
+
+.payment-section {
+	text-align: center;
+	.payment-container {
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		max-width: 1280px;
+		padding: 40px 16px;
+		padding-bottom: 20px;
+		position: relative;
+		.form-container {
+		  margin: 20px 0px;
+		  padding: 15px;
+		  //background-color: #f8f8f9;
+		  border: 1px solid #dedfe0;
+		  border-radius: 4px;
+		  .new-card-form {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 20px;
+			::ng-deep {
+			  .mat-form-field-outline {
+				border-radius: 5px;
+				//background-color: white;
+			  }
+			  .mat-radio-label-content {
+				display: flex;
+				align-items: center;
+			  }
+			}
+			.checkbox {
+			  color: grey;
+			}
+			.fields-container {
+			  display: flex;
+			  mat-form-field {
+				margin-right: 10px;
+				flex-grow: 1;
+				&:nth-last-child(1) {
+				  margin-right: 0px;
+				}
+				@media screen and (max-width: 1060px) {
+				  margin-right: 0px !important;
+				}
+			  }
+			  @media screen and (max-width: 1060px) {
+				flex-direction: column;
+			  }
+			}
+			mat-icon {
+			  color: gainsboro;
+			}
+		  }
+		  .secure-connection-container {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			color: gainsboro;
+			mat-icon {
+			  font-size: 36px;
+			  width: 36px;
+			  height: 36px;
+			}
+			.labels-container {
+			  display: flex;
+			  flex-direction: column;
+			  justify-content: flex-start;
+			  div {
+				line-height: 1;
+			  }
+			}
+		  }
+		}
+	}
+}
+
+::ng-deep .light-theme {
+	.welcome-banner {
+	  background-color: gainsboro;
+	  color: dimgray;
+	}
+  }
+  
+  ::ng-deep .dark-theme {
+	.welcome-banner {
+	  background-color: #212121;
+	  color: gainsboro;
+	}
+  }
+  
+  ::ng-deep .mint-theme {
+	.welcome-banner {
+	  background-color: gainsboro;
+	  color: dimgray;
+	}
+  }

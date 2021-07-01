@@ -49,5 +49,20 @@ export class ContactService {
       })
     );
   }
+
+  buyCoffee(paymentDto: any): Observable<{ success: boolean; errorMessage: string }> {
+    this.loaderService.show();
+    const url = 'https://eklp4v8rx7.execute-api.us-east-2.amazonaws.com/default/buymeacoffee';
+    return this.http.post<any>(url, {...paymentDto}).pipe(
+      tap(() => {
+        this.loaderService.hide();
+      }),
+      catchError((errorResponse: HttpErrorResponse) => {
+        alert(`Error buying coffee. Try again later. ${errorResponse.error.message}`);
+        this.loaderService.hide();
+        throw errorResponse.error;
+      })
+    );
+  }
 }
 
