@@ -16,7 +16,7 @@ import { ThemeService } from 'src/app/shared/services/theme.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public name = 'Omar Gomez Ramirez';
+  public name = 'Omar Eliseo Gómez Ramírez';
   public title = 'Ing. Mecatrónico';
   public enableShareButton = true;
   @Input() initials: string | undefined;

@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit {
   phoneNumberFooter = '+52 452 525 52 86';
   emailAddressFooter = 'gomar8138@gmail.com';
   physicalAddressFooter = 'San Felipe de los Herreros, Charapan, Michoacán, 60241';
-  public text = 'Omar Gómez Ramírez';
+  public text = 'Omar Eliseo Gómez Ramírez';
   showInfo: any;
   constructor( public dialog: MatDialog) { }
 

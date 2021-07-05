@@ -1,6 +1,6 @@
 import { Project } from "./project.interface";
 
 export interface ProjectsYear {
-    year: number,
+    year: number;
     projects: Project[];
 }
