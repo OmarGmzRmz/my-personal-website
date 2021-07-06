@@ -62,7 +62,7 @@ export class ProjectsService {
         { 
           id: 4,
           name: 'Contenedor de botellas',
-          code: 'PJT1',
+          code: 'PJT4',
           thumbnail: 'https://scontent.fgdl5-2.fna.fbcdn.net/v/t1.6435-0/p526x296/208194533_1680776542118219_7672351877934187935_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeH5MtHXuoRP9SRiEelyZglDHOyDn9-LWAIc7IOf34tYAs66ZTshW_yxbnqmEvUoTL5v9Gny5m4LxIoMTJRIv7oh&_nc_ohc=61tUkEvnZkcAX9LZR9M&_nc_ht=scontent.fgdl5-2.fna&tp=6&oh=bfe3a8227d5af23fec0ae42b57fcc924&oe=60E7A2F5',
           description: `<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>`,
           images: [
@@ -78,6 +78,17 @@ export class ProjectsService {
           name: 'Circuit RLC Calculator',
           code: 'PJT5',
           thumbnail: 'https://cdn.kastatic.org/ka-perseus-images/7bf2a85a2432376373d66e4a86fe015fdb5f5570.svg',
+          description: `<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>`,
+          images: [
+            'assets/images/projects/project-calculator1.jpeg',
+            'assets/images/projects/project-calculator2.jpeg'
+          ]
+        },
+        { 
+          id: 6,
+          name: 'Personal Website',
+          code: 'OEGR',
+          thumbnail: 'https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png',
           description: `<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>`,
           images: [
             'assets/images/projects/project-calculator1.jpeg',

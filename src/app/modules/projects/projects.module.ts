@@ -9,6 +9,8 @@ import { ProjectsService } from './services/projects.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ProjectDetailResolverService } from './services/project-detail.resolver.service';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ProjectsRoutingModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
-    SharedModule
+    SharedModule,
+    MatIconModule,
+    SwiperModule
   ],
   providers: [
     ProjectsService, 
