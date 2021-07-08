@@ -37,6 +37,7 @@
         img {
           height: 100%;
           width: 100%;
+          background-color: #fafafa;
           object-fit: contain;
         }
       }
@@ -130,6 +131,17 @@
 
 ::ng-deep {
   .dark-theme {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          .slide-container {
+            img {
+              background-color: #303030 !important;
+            }
+          }
+        }
+      }
+    }          
     .swiper-button {
       color: #ffffff !important;
     }
