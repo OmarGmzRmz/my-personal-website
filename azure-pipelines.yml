@@ -21,4 +21,11 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
   
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Suscripción de Azure 1(56bda854-5d9d-4bfc-8a93-2796a70a331f)'
+    appType: 'webApp'
+    WebAppName: 'omar-gmz-rmz'
+    packageForLinux: 'dist/'
 
