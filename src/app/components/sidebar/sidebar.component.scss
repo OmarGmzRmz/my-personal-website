@@ -6,7 +6,6 @@
   a {
       position: relative;
       padding: 10px 20px;
-     // color: blueviolet;
       cursor: pointer;
       text-decoration: none;
       &:visited {
@@ -37,6 +36,13 @@
         ::ng-deep {
           .mat-radio-button {
           }
+        }
+      }
+      .select-container {
+        display: flex;
+        min-width: 120px;
+        .language-select {
+          padding: 10px 20px;
         }
       }
     }

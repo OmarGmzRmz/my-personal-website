@@ -132,15 +132,15 @@ isSendEmail = false;
 skills = [
   {name: 'Javascript/Typescript', completion: 50, label: 'Intermediate'},
   {name: 'HTML/CSS', completion: 40, label: 'Intermediate'},
-  {name: 'C', completion: 50, label: 'Intermediate'},
+  {name: 'C', completion: 40, label: 'Intermediate'},
   {name: 'C++', completion: 40, label: 'Intermediate'},
   {name: 'NodeJS', completion: 40, label: 'Intermediate'},
   {name: 'MongoDB', completion: 20, label: 'Begginer'},
   {name: 'Git', completion: 45, label: 'Intermediate'},
-  {name: 'MATLAB', completion: 35, label: 'Begginer'},
+  {name: 'MATLAB', completion: 25, label: 'Begginer'},
   {name: 'AutoCad', completion: 40, label: 'Intermediate'},
-  {name: 'Microsoft Excel', completion: 40, label: 'Intermediate'},
-  {name: 'Proteus', completion: 50, label: 'Intermediate'},
+  {name: 'C (for pics)', completion: 40, label: 'Intermediate'},
+  {name: 'Proteus', completion: 45, label: 'Intermediate'},
   {name: 'Azure', completion: 10, label: 'Begginer'}
 ];
 //#endregion 

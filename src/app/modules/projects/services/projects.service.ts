@@ -80,8 +80,8 @@ export class ProjectsService {
           thumbnail: 'https://cdn.kastatic.org/ka-perseus-images/7bf2a85a2432376373d66e4a86fe015fdb5f5570.svg',
           description: `<p>More information coming soon.</p>`,
             images: [
-            'assets/images/projects/project-calculator1.jpeg',
-            'assets/images/projects/project-calculator2.jpeg'
+            'assets/images/projects/project-calculator1.jpg',
+            'assets/images/projects/project-calculator2.jpg'
           ]
         },
         { 
@@ -91,8 +91,6 @@ export class ProjectsService {
           thumbnail: 'https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png',
           description: `<p>More information coming soon.</p>`,
             images: [
-            'assets/images/projects/project-calculator1.jpeg',
-            'assets/images/projects/project-calculator2.jpeg'
           ]
         }
       ]
