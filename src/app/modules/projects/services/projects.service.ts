@@ -63,7 +63,7 @@ export class ProjectsService {
           id: 4,
           name: 'Contenedor de botellas',
           code: 'PJT4',
-          thumbnail: 'https://scontent.fgdl5-2.fna.fbcdn.net/v/t1.6435-0/p526x296/208194533_1680776542118219_7672351877934187935_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeH5MtHXuoRP9SRiEelyZglDHOyDn9-LWAIc7IOf34tYAs66ZTshW_yxbnqmEvUoTL5v9Gny5m4LxIoMTJRIv7oh&_nc_ohc=61tUkEvnZkcAX9LZR9M&_nc_ht=scontent.fgdl5-2.fna&tp=6&oh=bfe3a8227d5af23fec0ae42b57fcc924&oe=60E7A2F5',
+          thumbnail: 'assets/images/projects/project-contenedor1.jpg',
           description: `<p>More information coming soon.</p>`,
           images: [
             'assets/images/projects/project-contenedor1.jpg',
