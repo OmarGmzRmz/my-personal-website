@@ -12,7 +12,7 @@ import { TermsDialogComponent } from 'src/app/shared/components/terms-dialog/ter
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  nameFooter = 'Omar Eliseo Gómez Ramirez';
+  nameFooter = 'Omar Eliseo Gómez Ramírez';
   titleFooter = 'Ingeniero Mecatrónico';
   phoneNumberFooter = '+52 452 525 52 86';
   emailAddressFooter = 'gomar8138@gmail.com';

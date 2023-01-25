@@ -128,20 +128,34 @@ isSendEmail = false;
 @ViewChild('myInput2', {static: true}) myNumericInput2: ElementRef | undefined;
 //#endregion
 
-//#region Skills
-skills = [
-  {name: 'Javascript/Typescript', completion: 50, label: 'Intermediate'},
+//#region Programming languages
+programmingLanguages = [
+  {name: 'Javascript', completion: 50, label: 'Intermediate'},
+  {name: 'Typescript', completion: 50, label: 'Intermediate'},
   {name: 'HTML/CSS', completion: 40, label: 'Intermediate'},
   {name: 'C', completion: 40, label: 'Intermediate'},
   {name: 'C++', completion: 40, label: 'Intermediate'},
-  {name: 'NodeJS', completion: 40, label: 'Intermediate'},
-  {name: 'MongoDB', completion: 20, label: 'Begginer'},
+  {name: 'NodeJS', completion: 35, label: 'Intermediate'},
+  {name: 'Arduino', completion: 25, label: 'Begginer'},
   {name: 'Git', completion: 45, label: 'Intermediate'},
-  {name: 'MATLAB', completion: 25, label: 'Begginer'},
-  {name: 'AutoCad', completion: 40, label: 'Intermediate'},
-  {name: 'C (for pics)', completion: 40, label: 'Intermediate'},
-  {name: 'Proteus', completion: 45, label: 'Intermediate'},
   {name: 'Azure', completion: 10, label: 'Begginer'}
+];
+//#endregion 
+
+//#region Software
+software = [
+  {name: 'MATLAB', completion: 35, label: 'Intermediate'},
+  {name: 'SolidWorks', completion: 20, label: 'Begginer'},
+  {name: 'FluidSIM Pneumatics', completion: 40, label: 'Intermediate'},
+  {name: 'FluidSIM Hydraulics', completion: 30, label: 'Begginer'},
+  {name: 'CIMCO', completion: 50, label: 'Intermediate'},
+  {name: 'Arduino', completion: 35, label: 'Intermediate'},
+  {name: 'Proteus', completion: 35, label: 'Intermediate'},
+  {name: 'STEP7 MicroWIN SP9', completion: 35, label: 'Intermediate'},
+  {name: 'PC SIMU', completion: 35, label: 'Intermediate'},
+  {name: 'TIA Portal V16', completion: 15, label: 'Begginer'},
+  {name: 'Visual Studio Code', completion: 40, label: 'Intermediate'},
+  {name: 'S7 200', completion: 35, label: 'Intermediate'}
 ];
 //#endregion 
 
@@ -155,7 +169,11 @@ skills = [
   ngOnInit(): void {
 
 //#region Skills
-this.skills = this.skills.sort((a, b) => b.completion - a.completion);
+this.programmingLanguages = this.programmingLanguages.sort((a, b) => b.completion - a.completion);
+//#endregion
+
+//#region Software
+this.software = this.software.sort((a, b) => b.completion - a.completion);
 //#endregion
 
 //#region 
