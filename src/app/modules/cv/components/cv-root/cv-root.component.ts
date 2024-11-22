@@ -58,7 +58,7 @@ export class CvRootComponent implements OnInit {
   }
 ];
 
-pdfSrc = 'assets/OMAR ELISEO GOMEZ RAMIREZ.pdf';
+pdfSrc = 'assets/OMAR ELISEO GOMEZ RAMIREZ_CV_DIC24.pdf';
 
 //#region My Time chart
 single = [];
@@ -164,7 +164,7 @@ constructor(
   }
 
 async downloadResumeZip() {
-  window.open(`/assets/OMAR ELISEO GOMEZ RAMIREZ.zip`);
+  window.open(`/assets/OMAR ELISEO GOMEZ RAMIREZ_CV_DIC24.rar`);
 }
 
 //#region My Time
@@ -177,7 +177,7 @@ onActivate(data: any): void {
 }
 
 onDeactivate(data: any): void {
-  console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  console.log('Desactivate', JSON.parse(JSON.stringify(data)));
 }
 //#endregion
 

@@ -1,7 +1,7 @@
 export var single = [
     {
-      "name": "School",
-      "value": 6
+      "name": "Work",
+      "value": 9
     },
     {
       "name": "Sleep",
@@ -9,7 +9,7 @@ export var single = [
     },
     {
       "name": "Studying",
-      "value": 4
+      "value": 1
     },
     {
       "name": "Eating",
@@ -17,10 +17,10 @@ export var single = [
     },
     {
       "name": "Entertainment",
-      "value": 2
+      "value": 3
     },
     {
       "name": "Training Sports",
-      "value": 2
+      "value": 1
     }
   ];
